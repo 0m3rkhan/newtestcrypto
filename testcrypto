@@ -1,0 +1,62 @@
+TransactionID	OutputAddress	Asset	Blockchain	Finding
+d357550055d5affd2f6d9eb5197925889ce1d2c9ba4399fabd19459de4e81a60	TTWikrWT7yjBSS5FK9LCdxNVjUhjviBREa	TRX	tron	SEVERE, Sanctioned JURISDTICTION, Indirect, 7.64$. total 60.99$
+b077192428caef97cb426d752139d2ee6fb99a6eafd10b2c495d53923440ef11	TRJZW5LDEZbNjX3kapvfUmriiQARU5dDb4	USDT	tron	SEVERE, Sanctioned jurisdiction, Indirect, 378.12$. total 378.12 $
+bb5baa1dec8926840fa3a92f8e20a1aed694ad594db9e0668f89844d40283dc2	TUkBLTVU3LtvtoWQq7m2fmSy3fZEMSzoAg	USDT	tron	SEVERE, Sanctioned jurisdiction, Indirect 198.74$, total 245.22$
+5f6759a11a396cf12d132d3ae7e38c0a3aa08811bfa72a75372f5c4cfea15e2b	TJrGYXP7kNHiLPkRfeRQM6tPFVGtXETmT1	USDT	tron	SEVERE, Sanctioned jurisdiction, Indirect 38.49 $, total 255.84$
+ba0cd01fc2b440120fe7d25fac2bd4cada6e922b7456f59b0cba787ea0647537	TAtuQz4DvehZXJKeJMcH4hiuGg27LDRCN6	USDT	tron	MEDIUM, Gambling, Indirect, 21.62$. total 244.85$
+72e71eb171f1e1f8d837d5a9ffff6a02d8f3bc003ab1bf498e0ca67047e94cde	3LmdJ9Sk2qbM5MgUk5RV1QgLg6wvNfPnPW	BTC	bitcoin	HIGH, Scam, Indirect, $601.53$. total $611.66$
+0x4309a2c2cef3897091347c37cf3367ec2f081470150fa4ff3bcca640e5a6fe87	0xbdbe6c6e3fa17f5b86ef9ed5eb16030cbe724112	USDT	ethereum	HIGH, MEDIUM, LOW , 01.24.24, Stolen Funds, Scam, -, direct $137.46, $299.70, $807,765.01 total 807,838.71$
+6fe58123c92021a562e2e433381e49dcd57a0476051a7e43548a2bf9e14fb7d6	TQZK1c9Udtsq3rY3BhCnvF6XYUygp3ihAf	USDT	tron	MEDIUM, Sanctioned jurisdiction, Direct, $406.89, total $406.89
+
+
+
+
+Rule Name	Severity
+Transaction involving Known Hacker Group	HIGH
+Transaction involving Carding / PII Shop	HIGH
+Transaction involving Escort Service / Prostitution	HIGH
+Transaction involving Scam	HIGH
+Transaction involving ICO Scam	HIGH
+Transaction involving Violent Extremism	HIGH
+Transaction involving Darknet Market	HIGH
+Transaction involving Illicit Goods and Service	HIGH
+Transaction involving High-Risk dApp	HIGH
+Transaction involving Cybercrime Services	HIGH
+Transaction involving ICO Scam	HIGH
+Transaction involving Malware	HIGH
+Transaction involving ICO Scam	HIGH
+Transaction involving Extortion / Blackmail	HIGH
+Transaction involving Ransomware	HIGH
+Transaction involving Imposter Site or Service	HIGH
+Transaction involving Hacked or Stolen Funds	HIGH
+Transaction involving Counterfeit Goods	HIGH
+Transaction involving High-Risk Exchange	HIGH
+Transaction involving Piracy	HIGH
+Transaction involving ICO Scam	HIGH
+Transaction involving Banned or Controlled Substances	HIGH
+Transaction involving Cash-To-Crypto	HIGH
+Transaction involving Decentralized File Sharing Service	LOW
+Transaction involving Decentralized Marketplace	LOW
+Transaction involving Lending Service	LOW
+Transaction involving Non-Custodial Exchange	MEDIUM
+Transaction involving Multi-Level Marketing Scheme	MEDIUM
+Transaction involving Decentralized Investment Scheme	MEDIUM
+Transaction involving Decentralized Exchange	MEDIUM
+Transaction involving Gambling Service	MEDIUM
+Transaction involving Decentralized Gambling	MEDIUM
+Transaction involving Investment Scheme	MEDIUM
+Transaction involving Adult Content	MEDIUM
+Transaction involving P2P Crypto Marketplace	MEDIUM
+Transaction involving Online Username Reselling	MEDIUM
+Transaction involving Politically Exposed Person	MEDIUM
+Transaction involving High Yield Investment Scheme	MEDIUM
+Transaction involving Ponzi Scheme	MEDIUM
+Transaction involving Sports Betting	MEDIUM
+Transaction involving Child Sexual Abuse Material (CSAM) Vendor	SEVERE
+Transaction involving Sanctions	SEVERE
+Transaction involving Child Sexual Abuse Material (CSAM)	SEVERE
+Transaction involving Child Sexual Abuse Material (CSAM) Consumer	SEVERE
+Transaction involving Mixer	SEVERE
+Transaction involving Sexual Exploitation	SEVERE
+Transaction involving Human Trafficking	SEVERE
+Transaction involving Terrorist Financing 	SEVERE
