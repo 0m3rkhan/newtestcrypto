@@ -1,0 +1,342 @@
+Below is a consolidated DFS 504 data lineage gap assessment across all reviewed documents:
+
+**Documents reviewed:** Annual BSA/AML Risk Assessment ; OFAC Annual Risk Assessment ; Data Governance Policy ; Change Management / Testing Methodology ; Compliance Model Governance Guide ; Data Governance Committee Charter .
+
+---
+
+## 1. No complete end-to-end DFS 504 data lineage view
+
+**Gap:** Across the documentation set, there is no single end-to-end lineage view showing how AML/OFAC-relevant data flows from source systems through ingestion, transformation, transaction monitoring, filtering, alert generation, case handling, escalation, and regulatory reporting. The AML and OFAC risk assessments describe risk areas and control themes, the Model Governance Guide references systems and reconciliation procedures, the Data Governance Policy defines governance expectations, and the Change Management document includes a system overview. However, none of these documents collectively provide a complete source-to-target lineage map for DFS 504 purposes.
+
+**Reasoning:** DFS 504 reviews are focused on whether the institution can prove that transaction monitoring and filtering systems receive complete and accurate data. A regulator or independent reviewer would need to trace data from origination through each control point and output. The current documentation describes pieces of the environment but does not connect them into a full lineage narrative. This creates uncertainty over whether all customer, account, transaction, counterparty, sanctions, and alert data is captured and processed consistently.
+
+**Remediation plan:** Develop a DFS 504 lineage inventory and diagram set covering the full AML/OFAC ecosystem. At minimum, map Core Banking / New Gen, Prime / PCS, RegTechOne, FircoSoft / Firco Continuity, SWIFT, Fedwire, NISS, GMPS, data warehouse/reporting platforms, alert/case workflows, and regulatory reporting outputs. Each flow should show source system, interface, file/feed, transformation, target system, control point, reconciliation, owner, and evidence location.
+
+---
+
+## 2. Field-level critical data element lineage is incomplete
+
+**Gap:** The Data Governance Policy and Model Governance Guide reference Critical Data Elements and Key Data Elements, but the reviewed documentation does not include a complete DFS 504-specific CDE inventory with field-level lineage. Key AML/OFAC fields such as customer name, customer ID, account number, originator, beneficiary, counterparty, BIC, country, address, product code, transaction amount, currency, alert ID, case ID, disposition, and reporting indicator are not comprehensively mapped from source to target.
+
+**Reasoning:** DFS 504 data integrity cannot be validated only at the system or process level. The institution must know which specific fields drive screening, monitoring, risk scoring, alerting, and reporting. Without field-level lineage, it is not possible to determine whether critical attributes are sourced from the correct system, transformed properly, loaded completely, and used accurately by downstream rules and models. This is a foundational gap because most downstream controls depend on the reliability of these data elements.
+
+**Remediation plan:** Create a DFS 504 CDE/KDE inventory for transaction monitoring, filtering, and customer risk rating. For each field, document business definition, technical name, source system, source table/file, transformation rule, target system, downstream usage, data owner, data steward, control, validation rule, issue history, and evidence repository. Prioritize fields used in sanctions screening, TM rules, CRR scoring, alert generation, and SAR/OFAC reporting.
+
+---
+
+## 3. Authoritative source systems are not clearly defined for all critical data
+
+**Gap:** The documentation references multiple systems containing overlapping customer, account, transaction, risk, and screening data, but does not clearly identify the authoritative system of record for each critical data element. For example, customer data may exist across core banking, RegTechOne, Prime, reporting repositories, and screening platforms, but the documents do not consistently state which system is authoritative for each data attribute.
+
+**Reasoning:** When multiple systems contain similar data, inconsistencies can arise unless one authoritative source is designated. DFS 504 requires confidence that monitoring and filtering systems rely on accurate and current information. If the system of record is unclear, downstream systems may rely on stale, manually adjusted, duplicated, or incomplete data. This can result in inaccurate risk ratings, missed alerts, false negatives, or incomplete regulatory reporting.
+
+**Remediation plan:** Establish a system-of-record matrix for all DFS 504 CDEs. Assign authoritative ownership by data domain: customer, account, transaction, product, geography, counterparty, sanctions list, alert, case, disposition, and regulatory reporting. Update the Data Governance Policy and DGC Charter to require approval of system-of-record designations and require change impact assessments when authoritative sources change.
+
+---
+
+## 4. Data transformation and mapping logic is not sufficiently transparent
+
+**Gap:** The documentation discusses risk scoring, tuning, filtering logic, data mapping, and model rules, but does not provide complete transformation logic showing how raw data is converted, enriched, normalized, suppressed, filtered, or scored before use in AML/OFAC systems. The Change Management document and Model Governance Guide reference mapping specifications and system changes, but the actual detailed mapping logic is not included as part of the reviewed evidence.
+
+**Reasoning:** Transformation logic is central to DFS 504 because monitoring and filtering outcomes depend on how source data is prepared before rules are applied. Even if the source data is complete, incorrect mappings, truncation, parsing errors, country-code conversions, name-normalization issues, or suppression rules can weaken alert generation. Without documented transformation logic, reviewers cannot assess whether the data remains accurate and complete as it moves through the control environment.
+
+**Remediation plan:** Document field-level source-to-target mapping specifications for each material AML/OFAC data flow. Include transformation rules, parsing logic, enrichment sources, default values, suppression rules, exception handling, and known limitations. Require business and IT approval for each mapping. Incorporate mapping validation into regression testing, model validation, and post-change reviews.
+
+---
+
+## 5. Reconciliation controls are fragmented and not fully enterprise-wide
+
+**Gap:** The Model Governance Guide includes reconciliation procedures, particularly for Prime / PCS and certain source systems, and the OFAC Risk Assessment references reconciliation enhancements. However, the reconciliation framework does not appear to cover the entire AML/OFAC data ecosystem consistently. There is limited evidence that all customer, account, transaction, sanctions screening, batch screening, payment message, alert, case, and reporting data populations are reconciled end-to-end.
+
+**Reasoning:** DFS 504 requires the institution to prove that all required data reaches monitoring and filtering systems. Reconciliations limited to specific platforms or feeds may leave gaps in other high-risk flows, such as SWIFT, Fedwire, NISS, GMPS, batch customer screening, employee/vendor screening, BIC screening, and downstream case/reporting outputs. Fragmented reconciliation creates uncertainty about whether data is dropped, duplicated, delayed, rejected, or incorrectly loaded.
+
+**Remediation plan:** Build an enterprise DFS 504 reconciliation framework. Define expected-versus-actual controls for every material feed and data population. Include file counts, record counts, control totals, rejects, duplicate detection, missing-file alerts, late-file alerts, unmatched records, and exception aging. Automate where possible and require daily or periodic sign-off depending on risk. Report open breaks to the Data Governance Committee and Compliance governance forums.
+
+---
+
+## 6. Manual reconciliation and manual workaround processes create control risk
+
+**Gap:** The Model Governance Guide and OFAC Risk Assessment describe manual steps for reconciliation, log reviews, spreadsheet comparisons, and manual handling of certain transaction flows. Manual processes are also referenced in relation to screening, customer risk review, due diligence, and operational workarounds. These controls may be necessary, but the documentation does not consistently demonstrate maker-checker review, audit trail, standardized evidence retention, or quality assurance over manual execution.
+
+**Reasoning:** Manual processes are inherently higher risk because they depend on consistent human execution. In a DFS 504 context, manual steps can create lineage breaks if transactions or records are not routed, reviewed, logged, or reconciled consistently. Without evidence of dual review, exception logging, timestamped execution, and independent quality checks, the institution may not be able to prove that manual controls are reliable or operating effectively.
+
+**Remediation plan:** Inventory all manual DFS 504-relevant processes, including manual screening, manual reconciliations, manual uploads, manual overrides, and manual data corrections. For each, define standard operating procedures, maker-checker controls, required evidence, escalation triggers, frequency, and retention requirements. Where feasible, replace manual controls with automated controls. Until automation is implemented, require periodic QA sampling and reporting.
+
+---
+
+## 7. Data completeness controls are not sufficiently evidenced
+
+**Gap:** The documents contain references to data quality, reconciliations, monitoring, and control reviews, but they do not provide a complete evidence package demonstrating that all relevant transactions, customers, accounts, counterparties, and payment messages are captured by AML/OFAC systems. There is limited evidence of population-level completeness testing across all source systems and downstream platforms.
+
+**Reasoning:** Completeness is one of the most important DFS 504 requirements. The institution must be able to demonstrate that all transactions and relevant parties subject to monitoring or filtering are actually included in the systems performing those functions. If completeness controls are not well documented and evidenced, there is risk that certain transaction types, customer populations, message formats, or manual flows are excluded from screening or monitoring.
+
+**Remediation plan:** Define completeness control standards for all DFS 504 data feeds. For each feed, document expected source population, actual loaded population, rejects, exclusions, and reconciliation results. Implement completeness dashboards with thresholds and escalation requirements. Require monthly certification from data owners and system owners for high-risk feeds.
+
+---
+
+## 8. Data accuracy controls are not sufficiently evidenced
+
+**Gap:** The documentation does not provide robust evidence that critical data elements are accurate before being used in transaction monitoring, sanctions filtering, or customer risk scoring. While data quality is discussed conceptually, there is limited evidence of systematic validation of names, addresses, countries, ownership, industry, product, BIC, transaction amount, currency, and counterparty information.
+
+**Reasoning:** Complete data is not enough if the data is inaccurate. Incorrect customer geography, product classification, beneficial ownership, transaction coding, or counterparty information can materially affect screening results, monitoring scenario applicability, and risk scoring. DFS 504 expects institutions to validate that data used by compliance systems is accurate and reliable.
+
+**Remediation plan:** Implement accuracy controls for each DFS 504 CDE. Examples include reference-data validation, format checks, source-to-document sampling, country-code validation, BIC validation, customer attribute testing, transaction field validation, and periodic data profiling. Report accuracy metrics and exceptions to the Data Governance Committee and relevant Compliance governance bodies.
+
+---
+
+## 9. Data quality metrics and thresholds are not fully defined
+
+**Gap:** The Data Governance Policy, Model Governance Guide, and DGC Charter all reference data quality, metrics, dashboards, and corrective actions, but they do not define a complete DFS 504 data quality scorecard. There are no clearly defined thresholds for completeness, accuracy, timeliness, validity, consistency, duplicate rates, rejected records, missing fields, or unresolved exceptions.
+
+**Reasoning:** Without defined metrics and thresholds, data quality oversight remains subjective. DFS 504 requires ongoing assurance that data feeding monitoring and filtering systems remains fit for purpose. A committee may discuss data quality, but without measurable standards it cannot consistently determine whether data quality is acceptable, deteriorating, or requiring escalation.
+
+**Remediation plan:** Create a DFS 504 data quality scorecard. Define metrics by data domain and system, including completeness rate, accuracy rate, timeliness, duplicate rate, reject rate, missing mandatory fields, stale records, failed interface counts, unresolved breaks, and aged exceptions. Define green/amber/red thresholds and escalation paths. Require recurring reporting to DGC, Compliance, Risk, and senior management.
+
+---
+
+## 10. Exception management is not mature enough for DFS 504
+
+**Gap:** The documents describe issue identification, escalation, and remediation, and the DGC Charter establishes a governance path for unresolved data issues. However, the documentation does not provide evidence of a centralized DFS 504 issue inventory with severity, owner, root cause, remediation plan, due date, aging, compensating controls, closure validation, and trend reporting.
+
+**Reasoning:** DFS 504 requires sustainable issue management. Data lineage issues such as mapping defects, missing records, failed loads, duplicate records, unprocessed transactions, and screening gaps must be identified, tracked, escalated, and remediated. Without a centralized and well-controlled issue lifecycle, recurring problems may persist, and management may lack visibility into unresolved data integrity risks.
+
+**Remediation plan:** Implement a centralized DFS 504 data issue log. Require issue classification by severity, impacted system, impacted CDE, root cause, owner, target date, compensating control, and closure evidence. Require independent validation before closing high-risk issues. Report open and aged issues to DGC and Compliance governance forums.
+
+---
+
+## 11. Change management does not consistently require lineage impact analysis
+
+**Gap:** The Change Management / Testing Methodology document provides a detailed testing and change-control framework, and the Model Governance Guide references mapping and model changes. However, neither document appears to mandate a DFS 504-specific data lineage impact assessment for all changes affecting monitoring, filtering, customer risk rating, data feeds, transformations, rules, thresholds, or source systems.
+
+**Reasoning:** A technically small change can have a major compliance impact. For example, a mapping change, country-code update, sanctions list feed change, suppression-rule change, or message-format change could affect whether transactions are screened or alerts are generated. Without a required lineage impact assessment, system changes may unintentionally create data integrity gaps.
+
+**Remediation plan:** Add a DFS 504 lineage impact assessment requirement to the change management process. Every relevant change should identify impacted systems, feeds, CDEs, mappings, rules, thresholds, reconciliations, reports, and downstream outputs. Require Compliance, IT, Data Governance, and business owner approval for high-risk changes. Include post-implementation lineage validation and reconciliation.
+
+---
+
+## 12. Testing is functional but not sufficiently lineage-driven
+
+**Gap:** The Change Management document includes unit testing, UAT, regression testing, parallel testing, dress rehearsal, and performance testing. The Model Governance Guide discusses tuning, validation, ATL/BTL testing, and model reviews. However, the testing framework is not consistently tied to proving data completeness, accuracy, source-to-target mapping, field-level transformation, and downstream alert/reporting integrity.
+
+**Reasoning:** DFS 504 testing must demonstrate more than whether a system function works. It must demonstrate that the right data flowed into the system, the data was transformed correctly, the rules executed on the full population, and the output was complete and accurate. Functional UAT alone may not detect missing records, broken interfaces, mapping errors, or excluded transaction populations.
+
+**Remediation plan:** Develop DFS 504 lineage-based test scripts. Testing should include full-population reconciliation, source-to-target field validation, negative testing, rejected-record testing, duplicate testing, alert-generation testing, threshold testing, and post-production validation. Require test evidence packages for all material system, rule, mapping, and data-feed changes.
+
+---
+
+## 13. Vendor and third-party systems are not fully governed from a lineage perspective
+
+**Gap:** The documents reference vendor and third-party systems such as FircoSoft, Firco Continuity, RegTechOne, LexisNexis Risk Solutions, and other external tools or validation providers. However, the documentation does not fully evidence data lineage across vendor boundaries, including data sent to vendors, vendor processing logic, data returned, exception handling, and independent validation of vendor outputs.
+
+**Reasoning:** DFS 504 accountability remains with the institution even when third-party systems perform screening, monitoring, risk scoring, or data enrichment. Vendor platforms can become “black boxes” if the institution does not understand and validate data inputs, processing, rules, list updates, and outputs. This creates risk that the institution cannot prove completeness or accuracy of vendor-dependent controls.
+
+**Remediation plan:** Create vendor data lineage documentation for all DFS 504-relevant third parties. Document data feeds, formats, frequency, encryption/transfer controls, list update controls, processing logic, output files, exception handling, SLAs, and validation results. Require annual vendor control reviews and independent testing of key vendor-dependent data flows.
+
+---
+
+## 14. Alert-to-case-to-reporting lineage is underdeveloped
+
+**Gap:** The AML Risk Assessment, OFAC Risk Assessment, and Model Governance Guide discuss alerts, cases, SARs, OFAC reporting, investigations, and screening outcomes, but they do not provide a clear traceable path from source transaction/customer data to alert, case, investigation decision, SAR/OFAC filing decision, and final regulatory output.
+
+**Reasoning:** DFS 504 lineage should not stop at ingestion into monitoring or filtering systems. It should extend to outputs and regulatory decisions. Without alert-to-reporting traceability, the institution cannot demonstrate that all relevant alerts were reviewed, all cases were dispositioned, and all reportable events were appropriately escalated and reported.
+
+**Remediation plan:** Build downstream lineage for regulatory outputs. Map transaction/customer source data to alert ID, case ID, investigator disposition, escalation decision, SAR/OFAC decision, filing reference, and supporting evidence. Establish reconciliation between alerts generated, cases opened, cases closed, escalations, SARs, OFAC reports, and closed-no-action decisions.
+
+---
+
+## 15. Manual overrides and risk adjustments require stronger governance
+
+**Gap:** The Model Governance Guide allows manual risk adjustments and compliance overrides within customer risk rating processes. While approval and rationale are discussed, the documentation does not show a complete governance framework for override monitoring, pattern analysis, independent review, or periodic validation of override appropriateness.
+
+**Reasoning:** Manual overrides can materially affect customer risk ratings and downstream monitoring expectations. If overrides are not well controlled, they may conceal data quality issues, create inconsistent risk treatment, or weaken model reliability. DFS 504 reviewers would expect clear audit trails, approval evidence, before-and-after values, rationale, periodic review, and trend reporting.
+
+**Remediation plan:** Establish an override governance framework. Require standardized override forms, documented rationale, supporting evidence, before/after values, approver, timestamp, and periodic independent review. Develop quarterly override analytics by user, business unit, reason code, risk direction, and customer segment. Escalate unusual patterns to Model Governance and DGC.
+
+---
+
+## 16. Governance framework exists but operating evidence remains insufficient
+
+**Gap:** The DGC Charter, Data Governance Policy, and Model Governance Guide define governance roles, committees, responsibilities, escalation paths, meeting structures, and recordkeeping expectations. However, the documents do not include operating evidence such as meeting minutes, decisions, issue logs, approvals, lineage review materials, data quality reports, or remediation closure records.
+
+**Reasoning:** A charter or policy demonstrates governance design, not governance effectiveness. DFS 504 requires evidence that governance bodies actively oversee data integrity, review exceptions, approve remediation, challenge management assertions, and track issues to closure. Without operating evidence, the institution cannot demonstrate that governance is functioning as intended.
+
+**Remediation plan:** Create a DFS 504 governance evidence package. Include DGC agendas, minutes, attendance, decisions, lineage dashboards, issue logs, approval records, data quality reports, reconciliation summaries, open-risk items, and closure evidence. Require DFS 504 lineage as a recurring DGC agenda item.
+
+---
+
+## 17. DGC Charter helps governance but does not explicitly cover DFS 504 lineage
+
+**Gap:** The Data Governance Committee Charter strengthens governance structure, membership, meeting cadence, responsibilities, recordkeeping, and escalation. However, it does not explicitly assign the DGC responsibility for DFS 504 data lineage oversight, transaction monitoring data integrity, filtering data integrity, certification evidence, or review of DFS 504-specific metrics.
+
+**Reasoning:** The DGC may be responsible for general data governance, but DFS 504 requires targeted oversight of AML and OFAC data flows. Without explicit responsibilities, the committee could meet and discuss general data topics while not reviewing the metrics and artifacts most relevant to DFS 504. This limits the charter’s usefulness as a regulatory governance control.
+
+**Remediation plan:** Update the DGC Charter to include DFS 504-specific responsibilities. Add recurring review of lineage maps, CDE inventory, reconciliation results, data quality scorecards, high-risk exceptions, manual workarounds, change impacts, vendor feed issues, and certification evidence. Define which DFS 504 matters require DGC approval versus notification.
+
+---
+
+## 18. DGC meeting frequency may be insufficient for high-risk lineage issues
+
+**Gap:** The DGC Charter establishes quarterly meetings, with special sessions as needed. Quarterly meetings may be appropriate for general governance, but may not be sufficient for active DFS 504 remediation, high-risk reconciliation breaks, failed feeds, manual screening workarounds, or major system changes.
+
+**Reasoning:** DFS 504 data integrity issues can create immediate compliance exposure. A quarterly governance rhythm may delay escalation and remediation of critical issues. Where unresolved exceptions affect transaction monitoring or filtering, management should review them more frequently until stabilized.
+
+**Remediation plan:** Establish monthly DFS 504 data integrity reporting while remediation is active, with escalation to ad hoc meetings for critical breaks. Once controls mature, maintain monthly dashboards and quarterly formal governance review. Define triggers for immediate escalation, such as missed files, failed screening feeds, unresolved high-risk exceptions, or material mapping defects.
+
+---
+
+## 19. DFS 504 certification evidence requirements are not clearly defined
+
+**Gap:** The documents reference DFS 504, budgeting, governance, testing, and model controls, but they do not define a comprehensive annual certification evidence package. There is no single mapping that links DFS 504 requirements to controls, owners, evidence, testing results, open issues, and management attestations.
+
+**Reasoning:** DFS 504 certification should be supported by organized, traceable evidence. Without a defined evidence framework, management may struggle to demonstrate the basis for certification or respond efficiently to regulatory inquiries. Evidence should not be assembled ad hoc after the fact; it should be produced through the control environment.
+
+**Remediation plan:** Build a DFS 504 certification control matrix. For each regulatory expectation, identify related control, owner, frequency, evidence, testing approach, last execution date, exceptions, and remediation status. Maintain an annual certification binder containing lineage maps, CDE inventory, reconciliation evidence, data quality reports, testing results, model validations, issue logs, governance minutes, and management attestations.
+
+---
+
+## 20. Enterprise architecture and system inventory are not sufficiently integrated
+
+**Gap:** The Change Management document includes a systems overview diagram, and other documents reference multiple systems, but there is no integrated AML/OFAC enterprise architecture inventory that clearly defines systems, owners, interfaces, data feeds, data domains, upstream/downstream dependencies, and DFS 504 relevance.
+
+**Reasoning:** DFS 504 data lineage depends on understanding the system landscape. If systems and interfaces are not inventoried in one place, it is difficult to assess which systems are in scope, which feeds are critical, which changes require compliance review, and where data quality controls should operate. Fragmented architecture documentation increases the risk of missed dependencies.
+
+**Remediation plan:** Create and maintain an AML/OFAC data architecture inventory. Include systems, applications, databases, interfaces, files, APIs, batch jobs, manual uploads, vendors, owners, data domains, frequency, control points, and related CDEs. Link the inventory to change management and data governance processes.
+
+---
+
+## 21. Data retention and evidence retention requirements are not DFS 504-specific
+
+**Gap:** The Data Governance Policy and DGC Charter reference data retention, archiving, recordkeeping, and meeting records. However, the documentation does not define DFS 504-specific evidence retention requirements for lineage artifacts, reconciliations, data quality reports, test results, model validations, issue logs, change approvals, and certification support.
+
+**Reasoning:** DFS 504 reviews often require historical evidence showing that controls operated over time. If retention requirements are vague or scattered across policies, critical evidence may not be retained consistently. This can weaken the institution’s ability to support annual certification or respond to regulatory requests.
+
+**Remediation plan:** Define a DFS 504 evidence retention standard. Specify required artifacts, retention period, repository location, naming convention, access controls, and evidence owner. Include lineage diagrams, mapping files, reconciliations, exception logs, test scripts, test results, change approvals, validation reports, governance minutes, and certification sign-offs.
+
+---
+
+## 22. Documentation is fragmented across risk, governance, testing, and model documents
+
+**Gap:** Each document serves a valid purpose: AML risk assessment, OFAC risk assessment, data governance policy, change management, model governance, and committee charter. However, they are not integrated into a cohesive DFS 504 lineage framework. Key concepts appear across documents, but responsibilities, controls, evidence, and remediation activities are not consolidated.
+
+**Reasoning:** Fragmentation creates risk that no single document or control owner has a complete view of DFS 504 data integrity. Reviewers may need to piece together governance, lineage, data quality, testing, and reconciliation evidence from multiple sources. This can make the control environment appear less mature, even where individual components exist.
+
+**Remediation plan:** Develop a DFS 504 Data Lineage Standard or Playbook that consolidates requirements across the existing documentation set. The playbook should define scope, systems, CDEs, lineage requirements, reconciliation standards, data quality metrics, change impact requirements, governance forums, evidence standards, and certification mapping.
+
+---
+
+## 23. Model governance is stronger than data governance over lineage
+
+**Gap:** The Compliance Model Governance Guide provides meaningful structure around CRR, transaction monitoring, filtering, model tuning, testing, and validation. However, the documentation is more mature for model governance than for underlying data lineage. It discusses whether models and rules are operating but does not fully evidence that the data feeding those models is complete, accurate, and traceable at the field level.
+
+**Reasoning:** Model effectiveness depends on data integrity. A transaction monitoring rule or sanctions filter can be well-designed but still fail if required data is missing, malformed, stale, or mapped incorrectly. DFS 504 requires both model/rule governance and data integrity governance. The current documentation leans toward model oversight, leaving lineage and CDE control evidence less mature.
+
+**Remediation plan:** Integrate data lineage requirements into model governance. Require model validations and tuning reviews to include input data completeness, CDE accuracy, source-to-target mapping, rejected records, data exclusions, and lineage limitations. Include data lineage findings in model validation reports and remediation plans.
+
+---
+
+## 24. Sanctions screening data lineage requires deeper coverage
+
+**Gap:** The OFAC Risk Assessment and Model Governance Guide discuss FircoSoft/Firco Continuity, sanctions screening, list updates, tuning, employee/vendor/BIC screening, and non-customer transaction review. However, the documents do not provide full lineage for all sanctions screening populations, including customers, related parties, counterparties, vendors, employees, BICs, vessels, SWIFT/Fedwire messages, and non-customer payment flows.
+
+**Reasoning:** OFAC filtering effectiveness depends on knowing that all required parties and transactions are screened against current sanctions lists using accurate data. Any unscreened population, manual workaround, or incomplete feed can create sanctions exposure. DFS 504 reviewers would expect full coverage mapping across all sanctions-relevant populations.
+
+**Remediation plan:** Create a sanctions screening coverage matrix. For each population, define source system, data elements screened, screening system, frequency, list source, match logic, exception handling, reconciliation, owner, and evidence. Include non-customer transactions, related parties, vendors, employees, BICs, and payment message screening.
+
+---
+
+## 25. Transaction monitoring coverage and scenario lineage are not fully traceable
+
+**Gap:** The AML Risk Assessment and Model Governance Guide discuss transaction monitoring rules, red flags, scenarios, tuning, and alerts. However, the documentation does not fully map which source data fields feed each transaction monitoring scenario, what population each scenario applies to, what exclusions exist, and how outputs are reconciled to source activity.
+
+**Reasoning:** DFS 504 requires confidence that monitoring rules are applied to the correct population of transactions. If scenario input data, exclusions, and applicability logic are not documented, there is risk that certain products, customers, transaction types, or channels are not monitored as intended. Scenario lineage is necessary to prove that rules are both properly designed and properly fed.
+
+**Remediation plan:** Develop scenario-level lineage for each TM rule. Document applicable products, transaction types, source fields, inclusion/exclusion criteria, thresholds, transformations, alert logic, output fields, and reconciliation controls. Link each scenario to relevant CDEs, risk typologies, and validation evidence.
+
+---
+
+## 26. Customer risk rating lineage is not fully connected to source data and downstream use
+
+**Gap:** The Model Governance Guide provides substantial detail on CRR methodology, risk factors, weights, manual adjustments, and overrides. However, it does not fully map each CRR input to source systems and downstream uses in transaction monitoring, due diligence, sanctions screening, and reporting.
+
+**Reasoning:** CRR outputs influence customer due diligence, monitoring expectations, risk reporting, and potentially alert prioritization. If CRR input data is incomplete or inaccurate, customer risk may be misclassified. DFS 504 reviewers would expect clear traceability from source customer attributes to risk score and from risk score to downstream controls.
+
+**Remediation plan:** Build CRR input/output lineage. Map each risk factor to source field, source system, transformation, scoring rule, manual adjustment option, override control, and downstream use. Validate CRR data accuracy through periodic sampling and automated data quality checks. Review manual adjustments and overrides through quarterly governance.
+
+---
+
+## 27. Manual workarounds for payment screening require stronger compensating controls
+
+**Gap:** The OFAC Risk Assessment and Model Governance Guide indicate that certain payment flows, especially non-customer or specific message flows, may require manual handling or special procedures. While manual controls are referenced, the documents do not provide a complete compensating-control framework demonstrating that these flows are consistently captured, screened, reconciled, and reviewed.
+
+**Reasoning:** Payment screening is high-risk because missed or delayed screening can create sanctions violations. Manual workarounds are acceptable only if they are tightly controlled and evidenced. Without strong compensating controls, manual workarounds create a potential gap in DFS 504 filtering coverage.
+
+**Remediation plan:** For each manual payment screening workaround, document scope, trigger, step-by-step procedure, responsible team, required evidence, maker-checker review, reconciliation, escalation, and QA testing. Track volume and exceptions. Establish a target-state automation plan and timeline.
+
+---
+
+## 28. Independent challenge and validation over data lineage is not clearly defined
+
+**Gap:** Internal Audit, Risk, Compliance, Data Governance, and third-party validators are referenced across the documents, but there is no clearly defined independent challenge framework focused specifically on DFS 504 data lineage. The DGC Charter includes collaboration and committee decisioning, but does not require independent validation of lineage artifacts, reconciliations, or issue closure.
+
+**Reasoning:** DFS 504 control environments are stronger when management’s assertions about completeness and accuracy are independently challenged. Without independent validation, lineage maps, reconciliations, data quality metrics, and remediation closures may rely heavily on self-assessment by process owners.
+
+**Remediation plan:** Establish independent validation requirements for DFS 504 lineage. Internal Audit, Risk, or an independent compliance testing function should periodically test lineage accuracy, reconciliation completeness, data quality metrics, issue closure, and change impact assessments. Require independent closure validation for high-risk data issues.
+
+---
+
+## 29. Decision rights over data lineage matters are not sufficiently specific
+
+**Gap:** The DGC Charter defines decisioning, voting, and approvals, but does not specify which DFS 504 lineage matters require formal DGC approval. Examples include new CDEs, changes to system-of-record designations, high-risk reconciliation breaks, data quality thresholds, manual workaround extensions, mapping changes, and closure of high-risk issues.
+
+**Reasoning:** Ambiguous decision rights can lead to inconsistent governance. Some data issues may be handled operationally even when they have material DFS 504 impact. Clear approval requirements ensure that high-risk lineage decisions receive appropriate visibility and accountability.
+
+**Remediation plan:** Create a DFS 504 decision-rights matrix. Define which matters require DGC approval, Compliance approval, IT approval, Risk review, senior management notification, or RMICC escalation. Embed the decision-rights matrix in the DGC Charter, Data Governance Policy, and Change Management procedures.
+
+---
+
+## 30. Control execution evidence is not consistently included in the document set
+
+**Gap:** Across the reviewed documents, policies, procedures, frameworks, and methodologies are described in detail, but actual execution evidence is limited. Missing evidence includes executed reconciliations, sample control outputs, issue logs, closed remediation records, change tickets, test results, validation reports, committee minutes, and signed approvals.
+
+**Reasoning:** DFS 504 compliance is evidence-driven. A control design can be strong on paper, but regulators and independent reviewers will focus on whether controls operated consistently and effectively. Without execution evidence, the institution may not be able to support certification or demonstrate operating effectiveness.
+
+**Remediation plan:** Establish a DFS 504 evidence repository and monthly evidence collection process. For each control, define required evidence, responsible owner, frequency, reviewer, and retention location. Perform quarterly evidence completeness reviews and remediate missing artifacts before annual certification.
+
+---
+
+## Prioritized remediation sequence
+
+**Immediate priorities, 0–90 days:** Build DFS 504 CDE inventory; document high-risk end-to-end lineage flows; establish daily/periodic reconciliation evidence; inventory manual workarounds; create centralized issue log; add DFS 504 lineage to DGC agenda; define certification evidence package.
+
+**Near-term priorities, 3–6 months:** Expand field-level lineage; implement data quality scorecards; formalize lineage impact assessments in change management; strengthen vendor lineage controls; build alert-to-reporting lineage; define decision rights and approval thresholds.
+
+**Medium-term priorities, 6–12 months:** Automate reconciliations; implement lineage tooling or data catalog integration; mature independent validation; automate data quality monitoring; rationalize manual processes; maintain a complete DFS 504 control matrix tied to annual certification.
+
+
+
+
+
+
+
+
+| Priority bucket      | Remediation task                                                                                                                          | Add / update in these documents                                                                         |
+| -------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| 0–90 days / Critical | Build DFS 504 CDE/KDE inventory for TM, OFAC filtering, and CRR                                                                           | Data Governance Policy; Compliance Model Governance Guide; Data Governance Committee Charter            |
+| 0–90 days / Critical | Document high-risk end-to-end lineage flows for Core Banking → Prime/PCS, Core Banking → Firco, RegTechOne → CRR/TM                       | Compliance Model Governance Guide; Data Governance Policy; Change Management / Testing Methodology      |
+| 0–90 days / Critical | Create daily/periodic reconciliation evidence standards for source-to-target completeness                                                 | Compliance Model Governance Guide; Data Governance Policy; Data Governance Committee Charter            |
+| 0–90 days / Critical | Inventory all manual workarounds, manual reconciliations, manual screening steps, and manual overrides                                    | OFAC Annual Risk Assessment; Compliance Model Governance Guide; Change Management / Testing Methodology |
+| 0–90 days / Critical | Establish centralized DFS 504 data issue log with severity, owner, aging, root cause, and closure evidence                                | Data Governance Policy; Data Governance Committee Charter; Compliance Model Governance Guide            |
+| 0–90 days / Critical | Add DFS 504 data lineage as a standing Data Governance Committee agenda item                                                              | Data Governance Committee Charter                                                                       |
+| 0–90 days / Critical | Define DFS 504 certification evidence package and evidence repository                                                                     | Compliance Model Governance Guide; Data Governance Policy; Data Governance Committee Charter            |
+| 3–6 months / High    | Expand field-level lineage across all AML/OFAC systems, interfaces, files, and downstream reports                                         | Data Governance Policy; Compliance Model Governance Guide; Change Management / Testing Methodology      |
+| 3–6 months / High    | Implement DFS 504 data quality scorecards with thresholds for completeness, accuracy, timeliness, rejects, duplicates, and missing fields | Data Governance Policy; Data Governance Committee Charter; Compliance Model Governance Guide            |
+| 3–6 months / High    | Require DFS 504 lineage impact assessments for system, rule, mapping, threshold, vendor, and source-data changes                          | Change Management / Testing Methodology; Compliance Model Governance Guide; Data Governance Policy      |
+| 3–6 months / High    | Strengthen vendor lineage controls for FircoSoft, RegTechOne, sanctions/list providers, and other third-party systems                     | OFAC Annual Risk Assessment; Compliance Model Governance Guide; Change Management / Testing Methodology |
+| 3–6 months / High    | Build alert-to-case-to-reporting lineage for SARs, OFAC reports, blocked/rejected transactions, and disposition decisions                 | AML Risk Assessment; OFAC Annual Risk Assessment; Compliance Model Governance Guide                     |
+| 3–6 months / High    | Define formal decision rights and approval thresholds for DFS 504 lineage matters                                                         | Data Governance Committee Charter; Data Governance Policy; Compliance Model Governance Guide            |
+| 6–12 months / Medium | Automate reconciliations and reduce spreadsheet/manual control dependency                                                                 | Compliance Model Governance Guide; Change Management / Testing Methodology; Data Governance Policy      |
+| 6–12 months / Medium | Implement lineage tooling or data catalog integration for CDEs, systems, mappings, and controls                                           | Data Governance Policy; Change Management / Testing Methodology; Data Governance Committee Charter      |
+| 6–12 months / Medium | Establish independent validation of lineage maps, reconciliations, data quality metrics, and issue closure                                | Compliance Model Governance Guide; Data Governance Policy; Data Governance Committee Charter            |
+| 6–12 months / Medium | Automate data quality monitoring and dashboard reporting to DGC / Compliance governance                                                   | Data Governance Policy; Data Governance Committee Charter; Compliance Model Governance Guide            |
+| 6–12 months / Medium | Rationalize manual payment screening and reconciliation workarounds into automated controlled workflows                                   | OFAC Annual Risk Assessment; Compliance Model Governance Guide; Change Management / Testing Methodology |
+| 6–12 months / Medium | Maintain a DFS 504 control matrix mapped to certification requirements, evidence, owners, and testing results                             | Compliance Model Governance Guide; Data Governance Policy; Data Governance Committee Charter            |
