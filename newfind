@@ -13,4 +13,92 @@
 
 
 
-Jumping in to ensure that there is a clear understanding on the relationship between the Data Governance function and the Compliance function, with respect to Model Governance.  Based on your recommendations, it appears that there is an expectation that the Data Governance function, has a larger role for ensuring 504 compliance, that it was designed to have.  The DG Committee Minutes, will not provide specific details regarding Compliance models, from a 504 perspective.
+You want to **acknowledge their point**, but also **reframe the expectation correctly**—without backing off your findings.
+
+Here’s a strong, professional response you can use (and tweak tone depending on audience):
+
+---
+
+## Suggested Response
+
+That’s a fair point, and I want to clarify that the intent is **not to position Data Governance as responsible for DFS 504 compliance or model governance**, which appropriately sits within the Compliance function.
+
+Rather, the assessment is highlighting that **DFS 504 creates an overlap between Compliance and Data Governance**, specifically around **data integrity, completeness, and lineage of data feeding transaction monitoring and filtering systems**.
+
+From a regulatory perspective, DFS 504 does not require Data Governance to own the models—but it does require the institution to demonstrate that:
+
+* Data feeding those models is **complete and accurate**
+* Data flows are **understood and controlled**
+* Issues are **identified, escalated, and remediated**
+* Governance provides **credible oversight and evidence**
+
+Those expectations naturally touch both:
+
+* **Compliance (model ownership, effectiveness, certification)**
+* **Data Governance (data quality, lineage, issue management, controls)**
+
+---
+
+### Clarification on the Findings
+
+The findings are **not suggesting that:**
+
+* The Data Governance Committee should own or document Compliance models
+* DG minutes should contain detailed DFS 504 model discussions
+
+The findings **are suggesting that:**
+
+* There should be **clear integration points between Compliance and Data Governance**
+* Data Governance processes (e.g., issue management, data quality, lineage) should be **aligned to support DFS 504 requirements**
+* Governance structures should be able to **evidence oversight of data integrity risks impacting compliance systems**
+
+---
+
+### Where the Gap Actually Is
+
+The gap is not ownership—it is **alignment and traceability**:
+
+* Compliance governs the **models**
+* Data Governance governs the **data**
+* DFS 504 requires the institution to prove the **connection between the two**
+
+Right now, that connection is:
+
+* **Partially defined**
+* **Not fully evidenced**
+* **Not consistently embedded into governance outputs**
+
+---
+
+### On DGC Minutes Specifically
+
+Agree that DGC minutes are not expected to:
+
+* Detail model logic
+* Document rule tuning
+* Replace Compliance governance forums
+
+However, from a DFS 504 perspective, they should be able to demonstrate that:
+
+* Data issues impacting TM/filtering are being **identified and tracked**
+* Material data risks are being **escalated**
+* There is **visibility into data integrity affecting compliance systems**
+
+That level of oversight—not model detail—is what’s relevant.
+
+---
+
+### Bottom Line
+
+This is not about expanding the mandate of Data Governance beyond its design.
+
+It’s about ensuring that:
+
+> **The existing Data Governance framework is sufficiently connected to Compliance to support DFS 504 data integrity expectations and certification defensibility.**
+
+---
+
+If you want, I can give you:
+
+* A **shorter version (2–3 sentences)** for email
+* Or a **more assertive version** if you need to push back harder
