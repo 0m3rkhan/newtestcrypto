@@ -1,0 +1,63 @@
+SmartFi Wallet Sweep and Custody Flow Analysis
+Executive Summary
+Our review of SmartFi’s transaction activity shows a recurring operational pattern: customers deposited cryptocurrency into individual user wallets, and SmartFi’s system then attempted to move those assets into omnibus company-controlled wallets. The user wallets appear to have functioned as temporary receiving addresses rather than separate long-term storage accounts for each customer. This pattern was observed across multiple assets, including USDT and USDC, and across multiple customer accounts.
+Transaction Flow Overview
+1. Customer Deposit	2. User Wallet	3. Gas Station Funding	4. Sweep Attempt	5. Omnibus Wallet
+Customer sends USDT, USDC, or another supported asset.	The asset lands in an individual user wallet that functions as a temporary receiving address.	SmartFi’s Gas Station sends ETH or BNB so the wallet can pay blockchain transaction fees.	SmartFi’s system attempts to move, or “sweep,” the asset out of the user wallet.	The asset is moved, or intended to be moved, into SmartFi’s omnibus wallet structure.
+Figure 1. Summary of the observed wallet funding and sweep flow.
+Observed Custody and Sweep Activity
+A key observation is that, with limited exceptions identified in the reviewed data, asset transfers were sent or attempted to be sent to a destination labeled “HOTWALLET.” For consistency with prior communications, this report refers to that destination as SmartFi’s omnibus wallet. An omnibus wallet is a centralized platform wallet used to hold or move assets operationally, including assets associated with multiple users. In the reviewed examples where transfers to the omnibus wallet were completed, later wallet balance records showed that the original user wallet no longer held the deposited asset. This supports the conclusion that the reviewed activity reflects movement of customer assets out of user wallets and into an omnibus custody structure.
+The data also shows repeated funding from a source labeled “Gas Station.” Gas refers to the blockchain transaction fee required to move assets. On Ethereum, those fees are paid in ETH; on Binance Smart Chain, they are typically paid in BNB. The Gas Station appears to have supplied small amounts of ETH or BNB to user wallets so SmartFi could pay the required network fees and complete asset transfers. SmartFi’s Gas Station appears to have funded user wallets with ETH specifically so ERC-20 tokens, such as USDT, could be swept from those user wallets into SmartFi’s omnibus wallet. The recurrence of Gas Station funding across the reviewed wallets supports the conclusion that this was a centralized operational process rather than separate customer-directed activity.
+Sweep Cycle Analysis Methodology
+To evaluate whether balances remained in user wallets because SmartFi intended to keep assets segregated, or because sweep activity failed or was delayed, we performed a Sweep Cycle Analysis using the transaction ledger. The analysis reconstructed the lifecycle of deposited assets by linking the original customer deposit, the first failed sweep attempt, the last failed sweep attempt, and any later successful transfer to SmartFi’s omnibus wallet. This approach allowed us to assess the timing of sweep attempts after deposit, the number and duration of failed attempts, retry behavior, and whether the assets were ultimately moved into omnibus custody.
+The Sweep Cycle Analysis showed a recurring operational pattern in the reviewed population. In the examples reviewed, SmartFi attempted to sweep customer assets shortly after the original deposit. Where the initial transfer failed, SmartFi’s system continued trying to move the assets into omnibus custody, often at regular intervals of approximately five to six minutes. The repeated timing is consistent with automated retry logic rather than separate manual customer activity.
+Representative User Timeline
+One representative example is USER 110562. The records show that USER 110562 deposited 75 USDT on November 18, 2021, followed shortly afterward by a 0.008 ETH transfer from Gas Station. SmartFi’s system then began attempting to move the 75 USDT from the user wallet to the omnibus wallet, with the first failed sweep attempt occurring approximately one minute after the deposit. The ledger reflects 5,831 failed attempts before the assets were ultimately swept on December 10, 2021. The repeated timing, same asset amount, same destination, same fee-related error condition, and eventual successful sweep are consistent with an automated operational process. The temporary presence of funds in the user wallet therefore appears more likely to be a processing exception than evidence that the funds were intentionally held separately for that customer.
+USER 110562 Timeline
+Step	Event	Analytical Significance
+1	External deposit of 75 USDT into USER 110562’s user wallet.	The customer asset first arrived in an individual user wallet.
+2	Gas Station sent 0.008 ETH to the same user wallet.	SmartFi appears to have provided ETH so the wallet could pay network fees for sweeping event.
+3	SmartFi’s system attempted to sweep 75 USDT almost immediately after deposit from the user wallet to the omnibus wallet.	The user wallet was being used as a temporary receiving address before moving the asset to omnibus custody.
+4	The sweep attempts failed 5,831 times with “INSUFFICIENT_FUNDS_FOR_FEE”.   	The wallet did not have enough fee currency at that time to complete the transfer.
+5	The failed sweep attempts repeated at roughly five-minute intervals.	The regular timing is consistent with an automated retry process rather than manual customer action.
+6	The 75 USDT temporarily remained in the user wallet while the system continued retrying.	The temporary balance appears to reflect a processing exception, not intentional customer-specific segregation.
+Table 1. USER 110562 transaction and sweep sequence.
+Broader Sweep Analysis Observations
+The broader sweep analysis identified the same pattern across additional users in the reviewed population. For example, USER 551916 deposited USDT on September 27, 2021, experienced failed sweep activity within minutes of the deposit, and was ultimately swept on October 19, 2021 after more than 5,900 failed attempts. Other long-duration failed sweep cycles included USER 515531, which experienced more than 20,000 failed sweep attempts before being swept on October 23, 2023; USER 623281, which experienced approximately 14,000 failed attempts before eventual sweep activity; and USER 613740, which experienced more than 12,000 failed attempts before being swept. Although the number of retries and the duration varied, the common pattern in these examples was that SmartFi’s systems repeatedly attempted to move the assets into omnibus custody before ultimately succeeding.
+The analysis also identified batch-resolution events, where multiple previously failed sweep cycles were resolved at nearly identical timestamps across unrelated users. For example, multiple user wallets, including USER 151256, USER 551916, USER 909050, USER 788102, and USER 440136, were ultimately swept at approximately 05:38 AM UTC on October 19, 2021. A similar pattern occurred on December 10, 2021, when multiple user wallets, including USER 613740, USER 736100, USER 706174, USER 739434, USER 698490, USER 807276, and USER 110562, were swept within seconds of one another at approximately 07:17 AM UTC. Additional clustering was observed on February 5, 2022 and October 23, 2023. These synchronized sweep events are consistent with centralized processing activity rather than user-specific action.
+A smaller exception population was classified as “Failed Attempts Only,” meaning the available sweep-cycle analysis did not identify a corresponding successful sweep event within the reviewed data. Examples included USER 437263, USER 902233, USER 478432, USER 527192, and USER 118370. Even within this exception population, however, the transaction history reflected repeated efforts by SmartFi’s systems to transfer assets into omnibus custody. These exceptions therefore do not, by themselves, demonstrate an intent to maintain segregated customer custody and should be reviewed against the full ledger, transaction history, and vault balance population.
+Taken together, the transaction records, Gas Station funding, sweep-cycle timing, failed and successful sweep attempts, batch-resolution events, transfers to the omnibus wallet, and later wallet balances support a consistent operating model in the reviewed data: customer assets were moved, or repeatedly attempted to be moved, from user wallets into SmartFi-controlled omnibus wallets, with limited exceptions requiring further ledger review. The reviewed activity does not support a model where each customer’s assets were consistently maintained in separate, customer-specific wallets. Where assets temporarily remained in user wallets, the records commonly show fee-related failures, repeated automated retry attempts, delayed batch resolution, or exception cases requiring further review, rather than evidence of an intended segregated custody model.
+Evidence Summary
+1. Customer deposits were repeatedly moved or attempted to be moved toward omnibus wallets
+•	The records repeatedly show the same basic sequence:
+o	Customer deposit into a user wallet.
+o	User wallet transfer, or attempted transfer, to the omnibus wallet.
+•	This pattern appears across multiple users and asset types, which supports a platform-wide operating model.
+2. User wallets often did not retain the deposited asset after a successful sweep
+After successful sweep activity in the reviewed examples, later balance records showed that the original user wallet no longer held the deposited asset.
+•	This indicates that the asset had been moved out of the originating wallet.
+3. Assets from different customers converged into the same custody structure
+With limited exceptions identified in the reviewed data, transfers from user wallets were directed, or attempted to be directed, to a destination labeled HOTWALLET, referred to in this report as SmartFi’s omnibus wallet.
+Movement of assets from multiple user wallets into a common omnibus wallet structure supports a commingling analysis rather than a customer-by-customer segregation model.
+4. Gas Station funding appears centrally managed
+Multiple user wallets received ETH or BNB from the same source labeled Gas Station.
+•	This recurring pattern suggests that SmartFi centrally funded wallets so its system could pay transaction fees and move customer assets.
+•	SmartFi’s Gas Station appears to have funded the user wallets with ETH specifically so ERC-20 tokens, such as USDT, could be swept from those user wallets into SmartFi’s omnibus wallet.
+5. Repeated sweep failures indicate automated retry behavior
+•	Multiple failed sweeps used the same error message: “INSUFFICIENT_FUNDS_FOR_FEE.”
+The attempts repeated at predictable intervals in the reviewed examples, commonly around every five to six minutes.
+•	This timing pattern is consistent with an automated system process rather than one-off manual customer activity.
+•	The failed attempts show that SmartFi’s system was still trying to move the assets; they do not show that SmartFi intended to leave those assets segregated.
+6. Failed sweeps were often followed by successful transfers
+In the reviewed examples, repeated failed attempts were followed by a successful movement of assets to the omnibus wallet.
+•	This supports the conclusion that failures were processing exceptions, not evidence of a customer-specific custody model.
+7. Fee currency was supplied and later reduced
+•	Some user wallets received ETH or BNB from Gas Station, and later balance records showed lower amounts remaining.
+•	This is consistent with the fee currency being used to support later transaction activity.
+8. The reviewed data does not show consistent customer-specific segregation
+The same deposit, funding, sweep, retry, and omnibus-wallet transfer pattern appears across multiple customers in the reviewed data.
+•	Based on the reviewed records, there is no clear evidence that the assets reviewed were consistently excluded from SmartFi’s broader aggregation process.
+9. Timing analysis supports a system-controlled process
+•	Customer deposits were commonly followed by sweep activity within a short period of time.
+•	Failed sweeps often repeated at predictable intervals of approximately five to six minutes.
+•	That regularity is more consistent with scheduled system logic than individual customer action.
