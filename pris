@@ -1,175 +1,88 @@
-
-
-The discussion narrows the work into **four main investigative themes**, with the first three appearing to be the immediate priorities. The team is not being asked simply to prove that BitMEX behaved badly; they want evidence that can answer **duty → failure → alternative action → causation/loss**. 
-
-### 1. Did BitMEX fail to maintain an “orderly market”? — **Highest priority**
-
-This appears to be the central issue. The 2020 Terms of Service are described as saying that HDR had responsibility for maintaining an orderly market and discretion to halt trading because of market disruption or relevant external factors. The team wants to determine what **“orderly market” actually meant in 2020**, what conditions would reasonably justify intervention, and whether the March 12–13 conditions crossed that threshold. 
-
-The analysis should concentrate on three questions:
-
-**A. Should BitMEX have halted/suspended trading?**
-Was XBTUSD so dislocated, illiquid, volatile, or liquidation-driven that a reasonable exchange would have temporarily stopped trading?
-
-**B. Should BitMEX have changed its Mark Price methodology?**
-This is particularly relevant to your work on Mark Price. They specifically raise whether BitMEX should have changed the basis of the Mark Price to prevent the unusually large differential that developed.
-
-**C. What else could BitMEX reasonably have done?**
-Don't limit the analysis to "halt trading" versus "do nothing." Identify other controls that could have maintained an orderly market.
-
-This is why your work on **XBTUSD, Mark Price, liquidation price, bankruptcy price, and the liquidation engine** is foundational—it establishes what BitMEX's system was actually doing when the market became stressed.
-
----
-
-### 2. Compare BitMEX with other exchanges — **Very important**
-
-They repeatedly ask: **What was accepted market practice?**
-
-The team specifically wants examples from reputable exchanges where a product became severely disconnected from the broader market and the exchange responded by suspending trading or taking another protective action. 
-
-I would build this as a comparative table:
-
-| Question                    | BitMEX | OKX | Deribit | Binance | Coinbase |
-| --------------------------- | ------ | --- | ------- | ------- | -------- |
-| Product traded              | XBTUSD |     |         |         |          |
-| Price deviation             |        |     |         |         |          |
-| Extreme volatility controls |        |     |         |         |          |
-| Trading halt mechanism      |        |     |         |         |          |
-| Mark/index methodology      |        |     |         |         |          |
-| Liquidation controls        |        |     |         |         |          |
-| What happened Mar. 12–13?   |        |     |         |         |          |
-
-The important question isn't merely **"Did another exchange halt?"**
-
-It's:
-
-> **Given the same type of extreme market conditions, what would a reasonably operated cryptocurrency derivatives exchange have done in 2020?**
-
-That provides a benchmark against which BitMEX's actions can be evaluated.
-
----
-
-### 3. Causation: Would the client have been liquidated anyway? — **Critical**
-
-This may ultimately be the most important factual analysis because the speaker calls **loss the "acid test."**
-
-Even if BitMEX should have halted trading or modified its Mark Price, there still has to be a connection between that failure and the client's loss. 
-
-The question becomes a **counterfactual**:
-
-> **If BitMEX had acted appropriately, would the position still have been liquidated?**
-
-For example:
-
-**Actual scenario**
-
-XBTUSD collapses
-→ Mark Price reaches liquidation threshold
-→ position liquidated
-→ loss occurs
-
-**Counterfactual scenario**
-
-BitMEX halts trading
-→ market stabilizes
-→ trading resumes
-→ what would Mark Price have been?
-→ would it still cross the liquidation threshold?
-
-There is a complication they specifically identify: **the position apparently was liquidated after the freeze ended.**
-
-So you can't simply argue:
-
-> "The outage caused the liquidation."
-
-You need to reconstruct whether the position would have survived under the alternative actions BitMEX allegedly should have taken.
-
-This is where your **$3,980 liquidation price / $3,960 bankruptcy price** analysis becomes highly useful. I'd reconstruct the client's position against:
-
-**BitMEX XBTUSD Last Price + BitMEX Mark Price + underlying index/spot price + comparable derivatives prices + liquidation threshold**, all on the same timeline.
-
-That could become one of the most important graphics in the report.
-
----
-
-### 4. Platform outage / availability — **Separate contractual theory**
-
-The next major workstream concerns BitMEX's obligation to make reasonable efforts to keep its services available and avoid downtime during anticipated peak periods.
-
-The practical questions are:
-
-**Why did BitMEX go down?**
-
-**What actually failed?**
-
-**Was that failure reasonably preventable?**
-
-**Were appropriate infrastructure/DDoS protections being used?**
-
-**Would a reasonably operated exchange have prevented or mitigated the failure?** 
-
-There is also a very important factual issue involving the client's login attempts.
-
-BitMEX apparently contends that **JST failed two-factor authentication**.
-
-That means you need to separate:
-
-**Platform availability problem**
-
-from
-
-**User authentication problem.**
-
-If the client couldn't access the platform because BitMEX was unavailable, that's potentially helpful.
-
-If BitMEX was functioning but the client couldn't log in because they failed 2FA, that creates a causation problem.
-
-The logs and precise timestamps therefore matter enormously.
-
----
-
-## 5. Market manipulation / insider trading — important, but **not the priority**
-
-This was discussed at length, but they explicitly say **not to prioritize it**.
-
-The useful work here is narrower: determine whether the available trading data shows **patterns consistent with manipulation**, while also testing legitimate explanations such as extreme volatility and liquidation cascades. 
-
-They recognize an important evidentiary distinction:
-
-**Suspicious trading pattern**
-≠
-**Proof of manipulation**
-≠
-**Proof BitMEX/HDR employees conducted the manipulation**
-
-The data is anonymized, making that last step particularly difficult.
-
-The burner-account issue is worth addressing separately: **Why would exchange employees use concealed/burner trading accounts, what legitimate reasons might exist, and what improper activity could such accounts conceal?**
-
-But the team expressly says this shouldn't displace the more immediate work.
-
----
-
-# What I would prioritize right now
-
-Based strictly on this meeting, I'd organize your work in this order:
-
-**Priority 1 — Orderly Market:** Define what an orderly market meant in 2020 and determine whether March 12–13 conditions warranted intervention.
-
-**Priority 2 — Available Interventions:** Determine what BitMEX reasonably could have done—halt trading, alter Mark Price methodology, slow/restrict liquidations, or use other controls.
-
-**Priority 3 — Industry Comparison:** Establish what comparable exchanges actually did during extreme volatility and whether BitMEX's XBTUSD behavior was exceptional.
-
-**Priority 4 — Causation / Loss:** Model whether the client's position survives under each reasonable alternative scenario. This is ultimately the critical test.
-
-**Priority 5 — Outage:** Determine exactly why the platform became unavailable, whether reasonable measures could have prevented it, and reconcile this with the 2FA/login evidence.
-
-**Priority 6 — Manipulation / Insider Trading:** Look for anomalous patterns and explain the significance of burner accounts, but don't make this the principal workstream yet.
-
-There is also a **secondary loss-analysis issue** near the end that shouldn't get lost: they want to understand the client's overall exposure—longs, shorts, remaining collateral and **hedges on other platforms**—rather than assuming the BitMEX long liquidation equaled the client's entire economic loss. 
-
-The overarching question tying all of this together is therefore:
-
-> **Were the March 12–13 conditions sufficiently abnormal that BitMEX should reasonably have intervened; what intervention should it have taken; and, most importantly, would that intervention have prevented or reduced the client's liquidation loss?**
-
-That is the thread I would use to organize the entire investigation.
+Executive Summary
+XBTM20 was a dated, inverse Bitcoin/U.S. dollar futures contract listed by BitMEX for the June 2020 quarterly cycle. It provided leveraged exposure to changes in the BTC/USD exchange rate without requiring ownership of the corresponding notional amount of spot Bitcoin. The contract was quoted in U.S. dollars, while margin, settlement, and profit or loss were denominated in Bitcoin. Unlike XBTUSD, XBTM20 had a fixed expiration and settlement date and therefore did not rely on the recurring funding mechanism used by perpetual contracts. 
+Trading exposure was created through matched long and short positions. A long position benefited from an increase in the contract price, while a short position benefited from a decrease. Because the contract was inverse and Bitcoin-settled, profit and loss were calculated in Bitcoin using the reciprocal relationship between entry and exit prices. Leverage allowed the position's notional exposure to exceed the Bitcoin collateral allocated to it, magnifying both gains and losses and moving the liquidation threshold closer to the entry price. 
+BitMEX used Mark Price, rather than the most recent transaction price alone, to monitor unrealized profit and loss and determine whether a position continued to satisfy maintenance-margin requirements. For a dated futures contract, the Mark Price framework incorporated the underlying Bitcoin index and a fair-basis component that converged toward zero as the contract approached expiry. Accordingly, a reconstruction of an XBTM20 liquidation must use the contemporaneous XBTM20 Mark Price and fair-basis inputs, not an XBTUSD chart or the XBTM20 Last Price in isolation.  
+If the Mark Price reached the position's liquidation threshold, the trader lost control of the affected position and the BitMEX Liquidation Engine assumed responsibility for reducing or closing it. Liquidation price, bankruptcy price, and actual execution price are distinct. The liquidation price represented the estimated threshold at which maintenance margin was no longer satisfied; the bankruptcy price represented the point at which the margin assigned to the position would be exhausted; and the engine's actual executions depended on available order-book liquidity and market conditions.  
+The Insurance Fund operated behind the liquidation process as a market-level loss-management mechanism. Under BitMEX's published framework, amounts realized when a liquidated position was closed at a price better than bankruptcy price could be allocated to the applicable fund, while qualifying shortfalls from executions worse than bankruptcy price could be absorbed by the fund. The fund was intended to reduce the need for Auto-Deleveraging and was not described as a general reimbursement mechanism for the liquidated trader. 
+For XBTM20, expiry mechanics are central to the analysis. Open positions remaining at expiration were settled using the contract's settlement value, after which the dated contract ceased trading. This differs from XBTUSD, which had no ordinary expiry and used periodic funding to support convergence with its reference market. Any event-specific analysis should therefore identify whether the position was closed voluntarily, liquidated before expiry, or held to XBTM20 settlement. 
+A reliable account-level reconstruction requires the XBTM20 contract specifications and risk limits in effect at the time; the trader's side, size, entry price, leverage, and margin mode; contemporaneous Index Price, Mark Price, fair basis, and Last Price; liquidation and bankruptcy price calculations; fees and balance adjustments; order cancellations and Liquidation Engine executions; and any relevant Insurance Fund or Auto-Deleveraging records. XBTUSD data may provide broader market context, but it should not be substituted for XBTM20 instrument-level data when determining the mechanics or outcome of an XBTM20 position. 
+Key Takeaways 
+•	XBTM20 was a dated June 2020 Bitcoin futures contract, not a perpetual swap. 
+•	It was inverse, quoted in U.S. dollars, and margined and settled in Bitcoin. 
+•	It had a fixed expiry and did not use XBTUSD-style periodic funding. 
+•	Liquidation monitoring depended on XBTM20 Mark Price and maintenance margin. 
+•	Liquidation price, bankruptcy price, execution price, and final settlement value are separate measures. 
+•	Position-specific conclusions require contemporaneous XBTM20 records and rules. 
+2. What Was XBTM20?
+XBTM20 was a Bitcoin/U.S. dollar futures contract listed on BitMEX, rather than the XBTUSD perpetual swap. The symbol identified the June 2020 quarterly contract: “XBT” denoted Bitcoin, “M” was the June futures month code, and “20” denoted 2020.  The contract had a fixed expiration and settled on 26 June 2020.  It provided derivative exposure to changes in the Bitcoin/U.S. dollar exchange rate without transferring ownership of spot Bitcoin. A long position benefited when the contract price rose, while a short position benefited when it fell.
+XBTM20 used BitMEX’s inverse contract structure. Each contract represented USD 1 of Bitcoin exposure, the contract was quoted in U.S. dollars, and margin and profit or loss were denominated in Bitcoin (XBT).  Because the contract was inverse, the Bitcoin value of the position was based on reciprocal price movements. This meant that the same U.S. dollar price change did not produce a constant Bitcoin-denominated profit or loss across all price levels.
+
+Feature 	Description 
+Instrument 	Bitcoin/U.S. dollar quarterly futures contract 
+Contract value 	USD 1 of Bitcoin exposure per contract 
+Quote currency 	U.S. dollars 
+Margin and P&L 	Bitcoin (XBT) 
+Expiry and settlement 	26 June 2020; fixed-expiry cash settlement 
+Settlement reference 	Arithmetic mean of the .BXBT index over the final hour before expiry 
+Pricing and liquidation reference 	Fair Price Marking and the contract Mark Price framework 
+Funding 	Not applicable; funding payments are a feature of perpetual contracts 
+Leverage 	Leverage permitted, subject to BitMEX margin and risk-limit requirements 
+
+Unlike XBTUSD, XBTM20 did not rely on periodic funding payments to remain aligned with a reference market. It was a dated futures contract whose price could trade at a premium or discount to spot Bitcoin before convergence through expiry and settlement.  BitMEX’s futures documentation stated that futures were cash-settled and used an expiry price calculated from the relevant index over the final hour before expiration.  The platform separately used Fair Price Marking and a Mark Price for unrealized P&L and liquidation-related calculations, rather than relying solely on the most recent traded price. 
+3. Parties and Market Functions
+Long trader: Buys XBTM20 expecting the contract price to rise. An adverse decline in the XBTM20 Mark Price reduces the margin supporting the position.
+Short trader: Sells XBTM20 expecting the contract price to fall. An adverse increase in the XBTM20 Mark Price reduces the margin supporting the position.
+BitMEX trading venue: Operated the XBTM20 order book and broader risk-management infrastructure, calculated the applicable margin requirements and Mark Price, triggered liquidations, maintained the Insurance Fund, and provided Auto-Deleveraging as a final loss-allocation mechanism. After a liquidation was triggered, the Liquidation Engine separately assumed control of the affected position.
+Liquidation Engine: Assumed control of an XBTM20 position after liquidation was triggered and attempted to reduce or close the inherited exposure at available market prices. The execution price could differ from both the liquidation price and the bankruptcy price depending on order-book liquidity and market conditions.
+Insurance Fund: A Bitcoin-denominated, market-level backstop that could absorb qualifying shortfalls arising when a liquidated position was closed worse than bankruptcy price and thereby reduce resort to Auto-Deleveraging. It was not a general reimbursement mechanism for the liquidated trader.
+Auto-Deleveraging: A final loss-allocation mechanism that could reduce selected profitable positions on the opposite side if the Liquidation Engine could not resolve a liquidated position through the market and the applicable Insurance Fund protection was insufficient.
+4. Understanding Liquidation on BitMEX
+4.1 Margin and leverage
+A trader deposited Bitcoin as collateral and used that collateral as margin for an XBTM20 position. Initial margin supported the opening of the position. Maintenance margin was the minimum margin that had to remain available for the position to stay open. As the XBTM20 Mark Price moved against the position, unrealized losses reduced the margin cushion.
+Higher leverage placed the liquidation threshold closer to the entry price. Accordingly, a comparatively small adverse move could cause a highly leveraged position to breach maintenance margin.
+4.2 Mark Price, Index Price, and Last Price
+The Last Price was the most recent execution price on the BitMEX order book. The Index Price was an external spot-market reference. Mark Price was BitMEX’s fair-value calculation used for unrealized profit and loss and liquidation decisions. For XBTM20, the fair-price framework incorporated the underlying Bitcoin index and a fair-basis component that converged toward zero as the contract approached expiry.
+This distinction is important because a chart displaying Last Price may not show the price used to trigger liquidation. A position-specific review should therefore use the contemporaneous Mark Price and the applicable pricing methodology, not Last Price alone.
+4.3 Liquidation price and bankruptcy price
+The liquidation price was the estimated Mark Price at which the position would cease to satisfy the maintenance-margin requirement. The bankruptcy price represented the point at which the margin assigned to the position would be exhausted. Liquidation generally occurred before bankruptcy price was reached, leaving a buffer in which the Liquidation Engine could attempt to close the position.   
+
+For a long position, liquidation price ordinarily sat above bankruptcy price. For a short position, liquidation price ordinarily sat below bankruptcy price. The displayed liquidation price was an estimate and could change with margin allocation, position size, fees, and other account or contract inputs.
+4.4 What happens after liquidation
+After liquidation, the trader no longer controls the affected position. BitMEX may cancel open orders to release margin and may reduce the position before attempting to close the remainder. Execution is not guaranteed at the liquidation price and may occur across multiple prices depending on order-book liquidity and market conditions. 
+For a liquidated XBTM20 long, reducing the inherited exposure generally required selling XBTM20. For a liquidated XBTM20 short, reducing the inherited exposure generally required buying XBTM20. In fast or illiquid markets, these executions could add immediate demand or supply to the XBTM20 order book.
+4.5 Insurance Fund allocation
+The relevant comparison is between the Liquidation Engine’s execution and bankruptcy price. If the position is closed at a price better than bankruptcy price, the excess may be credited to the applicable Insurance Fund. If it is closed at a price worse than bankruptcy price, the resulting shortfall may be absorbed by that fund. 
+The Insurance Fund protects the market’s settlement process. It does not ordinarily restore the liquidated trader’s margin or return a favorable post-liquidation execution difference to that trader.
+4.6 Understanding the Insurance Fund
+BitMEX describes the Insurance Fund as a Bitcoin-denominated, market-level loss-absorption mechanism designed to support contract settlement and reduce reliance on Auto-Deleveraging when the Liquidation Engine cannot close a liquidated position at or better than bankruptcy price. The fund is not a customer account balance or a reimbursement mechanism for the liquidated trader.
+Under BitMEX’s published liquidation framework, the Liquidation Engine assumes control of a position once liquidation occurs and attempts to close or reduce the position before losses exceed the margin allocated to that position. The Insurance Fund sits behind this process and may be used to absorb qualifying deficits that arise when execution prices are worse than bankruptcy price.
+BitMEX’s published materials distinguish the Insurance Fund from customer account balances and describe the fund as a market-level risk management tool intended to support contract settlement and reduce reliance on Auto-Deleveraging. The fund is therefore directed toward system-wide loss management rather than reimbursement of losses incurred by a liquidated trader.
+BitMEX further explains that the Insurance Fund may increase when liquidated positions are closed at prices better than bankruptcy price. In those circumstances, the difference between the liquidation outcome and bankruptcy price may be transferred to the applicable Insurance Fund according to the rules governing the relevant product.
+Conversely, when market conditions prevent a liquidated position from being resolved at or better than bankruptcy price, the Insurance Fund may be used to absorb resulting deficiencies before other loss-allocation mechanisms are considered.
+BitMEX publishes historical Insurance Fund balances. Determining whether those balances were maintained or allocated separately for XBTM20 requires the contemporaneous contract specifications, fund records, and product-level accounting applicable to the relevant period.
+Because the Insurance Fund operates in conjunction with liquidation pricing, bankruptcy pricing, and Auto-Deleveraging rules, evaluating the effect of the fund in any individual liquidation requires analysis of the contemporaneous contract specifications, applicable margin requirements, liquidation records, bankruptcy price calculations, and execution data that existed at the time of the relevant event.
+4.7 Auto-Deleveraging
+If the Liquidation Engine cannot close the position through the market and the applicable Insurance Fund allocation is insufficient, Auto-Deleveraging may reduce selected profitable positions on the opposite side. BitMEX’s published methodology ranks positions for this purpose using profitability and leverage factors. 
+5. Position Lifecycle
+This section follows an XBTM20 position from the time a trader supplies collateral through the point at which the position is voluntarily closed, liquidated, or held to expiry and settlement. The trader posts Bitcoin, opens a leveraged position, and must keep enough margin available as the XBTM20 Mark Price changes. BitMEX continuously compares the position against its maintenance-margin requirement using Mark Price. If the available margin falls below that requirement, the trader loses control of the position and the Liquidation Engine attempts to reduce or close it. Execution relative to bankruptcy price may affect the Insurance Fund, and Auto-Deleveraging may apply if the market and applicable fund protection are insufficient. The steps below summarize the liquidation path in chronological order.
+1.	Collateral posted: The trader deposits Bitcoin and allocates margin to a derivative position.
+2.	Position opened: A buy or sell order is matched, creating long or short XBTM20 exposure.
+3.	Mark Price updated: The fair-price framework updates the value used for unrealized P&L and liquidation monitoring.
+4.	Maintenance margin monitored: An adverse movement in the XBTM20 Mark Price reduces the available margin cushion.
+5.	Liquidation triggered: Mark Price reaches the threshold at which maintenance margin is no longer satisfied.
+6.	Liquidation Engine acts: Control shifts to the engine, which cancels orders, reduces exposure, or seeks to close the position.
+7.	Loss-protection mechanisms apply: Execution relative to bankruptcy price may increase or draw on the applicable Insurance Fund; Auto-Deleveraging may reduce selected profitable positions on the opposite side if the Liquidation Engine cannot resolve the position through the market and the applicable fund protection is insufficient.
+6. Liquidation Cascades
+Liquidations can occur in clusters when many leveraged positions have thresholds near the prevailing Mark Price. Forced closing activity in the affected instrument may then add buying or selling pressure to its order book. If the resulting market movement causes additional positions to breach maintenance margin, further liquidations may follow. This sequence is commonly described as a liquidation cascade.
+A cascade is a market-mechanics description, not a conclusion about why the initial price movement occurred. Its scale depends on the amount of XBTM20 leverage outstanding, the distribution of XBTM20 liquidation thresholds, XBTM20 order-book depth, the pace of Liquidation Engine activity, external spot prices, arbitrage, and the arrival of new liquidity. Establishing that a cascade occurred therefore requires contemporaneous XBTM20 position, liquidation, and order-book data rather than broader XBTUSD or spot-market movements alone.
+7. Information Required for a Position-Specific Review
+A position-specific review requires contemporaneous, account-level information because the general mechanics described above do not, by themselves, establish whether a particular liquidation was triggered, calculated, and executed in accordance with the rules then in effect. The information below is needed to reconstruct the position from opening through liquidation, independently verify the applicable margin and pricing calculations, assess the Liquidation Engine’s actions and resulting executions, and determine whether any Insurance Fund or Auto-Deleveraging activity affected the final outcome.
+
+•	The contract specification and margin rules in effect at the relevant time.
+•	The position side, size, entry price, leverage, and margin mode.
+•	The amount and timing of margin allocated to the position.
+•	The contemporaneous XBTM20 Index Price, Mark Price, fair-basis inputs, and Last Price.
+•	The contemporaneous inputs and calculations used to determine the liquidation price and bankruptcy price, including applicable margin allocation, position size, fees, and contract or account parameters.
+•	Trading fees and other balance adjustments applicable to the XBTM20 position.
+•	Cancellation, liquidation, reduction, and execution records for the position.
+•	Relevant Insurance Fund entries, fund-allocation records, and any Auto-Deleveraging records sufficient to determine whether and how those mechanisms applied to the XBTM20 position.
