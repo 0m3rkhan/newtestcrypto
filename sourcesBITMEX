@@ -1,0 +1,39 @@
+ BitMEX Terms of Service, archived Mar. 7, 2020, §§ 1.12, 7.2–7.4. Section 1.12 states that maintaining an orderly market is BitMEX’s responsibility and permits a trading halt due to market disruption or other relevant external events; § 7.3 states that HDR shall make reasonable efforts to ensure availability and commercially reasonable efforts to avoid downtime during anticipated peak hours. https://web.archive.org/web/20200307112344/https://www.bitmex.com/app/terms
+
+ Id. § 7.3 (expressly identifying necessary maintenance, technical issues, and network and system overloads as possible causes of disruption); see also §§ 7.2–7.4 for BitMEX’s broad “as available” and availability/liability disclaimers.
+
+ Arthur Hayes, “How We Are Responding to the 13 March DDoS Attacks,” BitMEX Blog (Mar. 16, 2020). BitMEX stated that the botnet responsible for the March 13 attack had conducted a similar but unsuccessful attack on Feb. 15, and that BitMEX believed the attackers identified their target in February and waited for a moment of maximum market impact. https://www.bitmex.com/blog/how-we-are-responding-to-last-weeks-ddos-attacks
+
+ Id. BitMEX reported that the attack exploited a specially crafted Trollbox query; database resource exhaustion affected the authentication/access-control layer in front of the trading engine. BitMEX stated that the trading engine operated normally and market data was not disrupted, but it became nearly impossible to reach the engine during the affected periods.
+
+ Id. BitMEX reported identifying 156 ETHUSD accounts whose Last Price stops were erroneously triggered by unintended late processing of market orders during the first downtime and stated that 40.297 XBT was refunded. This evidence concerns ETHUSD Last Price stops and should not be presented as proof that XBTM20 liquidations were erroneous.
+
+ BitMEX API Changelog, entries dated Nov. 9, 2017 and Feb. 26, 2018. The Nov. 9 entry states that load shedding at critical queue depth did not apply to order cancellations; the Feb. 26 entry states that Order Cancel and the Close execInst remained exempt from shedding. https://www.bitmex.com/app/static/md/en-US/apiChangelog. See also BitMEX, “Summary of Completed Maintenance” (Nov. 10, 2017), stating that order cancellations were not subject to the load-shedding restriction and that capacity on the user-authorization/API-key subsystem had been quadrupled.
+
+ Arthur Hayes, “Trading Will Be Suspended at 23:30 UTC Until Further Notice,” BitMEX Blog (July 5, 2017), announcing that trading would be halted on all BitMEX products because of network issues. https://www.bitmex.com/blog/trading-will-be-suspended-at-2330-utc-until-further-notice
+
+ BitMEX Terms of Service, archived Mar. 7, 2020, §§ 1.12 and 7.3. https://web.archive.org/web/20200307112344/https://www.bitmex.com/app/terms
+
+ BitMEX, “Postmortem: Downtime, 19 May 2020” (May 22, 2020). BitMEX stated that no liquidations occurred while the exchange was offline; at 13:23 UTC the platform returned in Market Suspended and Cancel-Only mode, customers were notified that all trading would resume at 13:40, and trading resumed at that time. https://www.bitmex.com/blog/postmortem-downtime-19-may-2020
+
+ Id. BitMEX stated that following review of previous downtime events and customer feedback it amended reopening procedures for unscheduled events, including an updated Cancel-Only protocol; it reported 38,437 cancel-order instructions during the 17-minute period before full functionality resumed.
+
+ Id. BitMEX stated that a May 14 infrastructure change was made “in direct response to the March 13 degradation of service” after weeks of design sessions, cloud-provider consultation, and production-like load testing; BitMEX said the primary user-database technology replacement improved recovery time 4x and created opportunities to scale it 15x.
+
+ Kraken, “Kraken Returns with Free Trading” (Jan. 2018). Kraken stated that all orders were cancelled before trading resumed and that margin liquidations and creation of new margin positions would be paused for at least 48 hours. https://blog.kraken.com/news/kraken-returns-with-free-trading
+
+ Binance, “System Upgrade Notice” (May 14, 2019). Binance announced that trading would be suspended during the upgrade and that after completion users would receive a 30-minute window to cancel open orders before trading resumed. https://www.binance.com/en/support/announcement/detail/360028054052
+
+ Deribit, “Deribit Flash Crash – A Letter from the Founders” (Nov. 2019), discussing an index-calculation issue that caused invalid liquidations and the exchange’s decision to compensate affected traders. https://insights.deribit.com/exchange-updates/deribit-flash-crash-a-letter-from-the-founders/
+
+ BitMEX Risk Disclosure, archived June 8, 2020, Cyber Risk and Risks Relating to Leveraged Trading. The disclosure identifies denial-of-service attacks as capable of affecting platform operation/availability and states that technical issues with attempted orders may leave a trader unable to manage risk on open positions. Because this archive post-dates March 13, it is used here as a discovery lead and evidence of BitMEX’s articulated risk understanding by June, not as proof of the disclosure governing the March incident. https://web.archive.org/web/20200608042715/https://www.bitmex.com/app/riskDisclosure
+
+ Binance Terms of Use, archived Mar. 12, 2020 (Terms state “Last revised: 15 August 2019”), § 8(a)(4), Wayback Machine: https://web.archive.org/web/20200312220614/https://www.binance.com/en/terms. Section 8(a)(4) states that under certain market conditions it may be difficult or impossible to liquidate a position, including due to technical issues on Binance.
+
+ Binance Terms of Use, archived Mar. 12, 2020, § 8(b)(6), (9), Wayback Machine: https://web.archive.org/web/20200312220614/https://www.binance.com/en/terms. Binance reserved discretion to perform measures to mitigate potential losses to a customer and described mechanisms intended to minimize counterparty liquidation.
+
+ Binance Terms of Use, archived Mar. 12, 2020, § 6(b)(6), Wayback Machine: https://web.archive.org/web/20200312220614/https://www.binance.com/en/terms. The Terms prohibited vulnerability testing, breaching security or authentication measures, imposing unreasonable or disproportionately large infrastructure loads, and interference with the proper working of the Services or transactions.
+
+ Arthur Hayes, “How We Are Responding to the 13 March DDoS Attacks,” BitMEX Blog (Mar. 16, 2020). BitMEX stated that the botnet responsible for the March 13 attack had conducted a similar, unsuccessful attack on Feb. 15, 2020 and that BitMEX believed the attackers waited for a moment of maximum market impact. https://www.bitmex.com/blog/how-we-are-responding-to-last-weeks-ddos-attacks.
+
+ Binance Terms of Use, archived Mar. 12, 2020, § 8(b)(7), Wayback Machine: https://web.archive.org/web/20200312220614/https://www.binance.com/en/terms. The Terms stated that during Binance system maintenance customers remained responsible for managing margin or futures accounts, including keeping or closing positions and repaying loans.
