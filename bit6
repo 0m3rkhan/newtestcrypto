@@ -1,0 +1,169 @@
+Yes. **It helps, but mostly as a post-incident document showing that BitMEX later spelled out risks that closely resemble what happened in March.** The biggest issue is timing: the snapshot you provided is **June 8, 2020**, after both the March 12–13 disruption and the May 19 outage. The Wayback page itself shows captures of this risk-disclosure URL beginning on June 8, 2020; that does not prove the disclosure was first created that day, but it means we should not assume this exact wording applied in March without earlier evidence. ([Wayback Machine][1])
+
+What makes it useful is that several provisions are almost tailor-made for the issues you are investigating.
+
+### The strongest point: BitMEX expressly recognized that technical problems could prevent traders from managing positions
+
+The leveraged-trading section says that under certain conditions, including **“technical issues with the orders that you attempt to place,”** a trader may be unable to manage the risk on open positions. It also says users must be able to monitor their positions at all times. ([Wayback Machine][1])
+
+That is important because it shows BitMEX explicitly understood the causal chain:
+
+**technical problem → trader cannot manage position → leveraged position can suffer loss/liquidation.**
+
+For your narrative, I would put it this way:
+
+> By June 2020, BitMEX expressly warned customers that technical issues affecting their orders could leave them unable to manage the risk of leveraged positions. That warning is directly relevant to the March 13 event, where BitMEX later acknowledged that customer requests were delayed or prevented and access to the trading engine was severely impaired. The question for discovery is when BitMEX first recognized this risk internally and what safeguards it had in place before March 13.
+
+That is a good discovery argument even if this exact disclosure post-dates March.
+
+### The cyber-risk language is also highly relevant
+
+The disclosure expressly identifies:
+
+* denial-of-service attacks;
+* coordinated attacks;
+* operational disruption;
+* impairment of service availability;
+* cyberattacks that do not require unauthorized access.
+
+Those are essentially the categories BitMEX later said occurred on March 13. ([Wayback Machine][1])
+
+This helps your **foreseeability** theme.
+
+The careful argument is not:
+
+> “This proves BitMEX knew this exact DDoS attack would occur.”
+
+Instead:
+
+> **BitMEX itself identified denial-of-service attacks and operational disruption as foreseeable categories of platform risk. Discovery should establish when these risks were formally recognized, what controls were designed to mitigate them, and whether substantially similar language or internal risk assessments existed before March 13.**
+
+That is much stronger.
+
+### The disclosure distinguishes BitMEX-controlled problems from outside-network problems
+
+This is one of the most useful details.
+
+The “Access Risks” section disclaims inability to trade caused by **network transmission problems or restrictions outside BitMEX's direct control**, such as mobile signal, internet-provider latency, or other outside service providers. ([Wayback Machine][1])
+
+That potentially creates an important distinction for your case.
+
+BitMEX's March explanation was not merely:
+
+**customer's internet failed.**
+
+BitMEX described internal resource exhaustion affecting its authentication/access-control infrastructure and delaying messages before they reached the trading engine.
+
+So you can frame the issue as:
+
+> **BitMEX's own risk disclosure distinguished customer-side or third-party network failures from failures within BitMEX's direct operational environment. Discovery is necessary to determine whether the March access impairment arose from infrastructure and architecture within BitMEX's direct control, and if so, whether the contractual disclaimers concerning external network problems are applicable to the actual incident.**
+
+That is a useful legal/factual distinction.
+
+### The platform-downtime section is interesting, but it also helps BitMEX
+
+The June disclosure expressly warns that platform maintenance can result in downtime, lack of access, delayed/cancelled orders, and problems with orders placed during downtime. ([Wayback Machine][1])
+
+This will plainly be used by BitMEX to argue that customers were warned of downtime risk.
+
+But there are two limitations.
+
+First, the language specifically discusses **maintenance**. The March incident was not routine maintenance; BitMEX characterized it as a DDoS/security event.
+
+Second, warning customers that downtime is possible does not answer the different question:
+
+> **What should the exchange do once customers cannot access leveraged positions while automated liquidation mechanisms remain active?**
+
+The disclosure warns of the risk. It does not, by itself, establish that continuing liquidation under asymmetric access conditions was a reasonable response.
+
+### There is another very useful provision involving deposits and position management
+
+The disclosure states that a trader may suffer loss if a deposit is not credited and the trader is consequently unable to manage the risk of a position or open order. ([Wayback Machine][1])
+
+That language reinforces the same conceptual principle:
+
+**ability to manage the position matters.**
+
+BitMEX's own risk documentation therefore recognizes situations where a platform/process issue can impair a trader's ability to manage risk.
+
+That supports your broader claim that “access” is not merely being able to view a webpage. Meaningful access includes the ability to take risk-reducing actions.
+
+### The June disclosure may itself be a discovery lead
+
+This may be its greatest value.
+
+We should ask:
+
+**When was this Risk Disclosure drafted?**
+
+**Who drafted it?**
+
+**When was it approved?**
+
+**Was it prepared in response to March 12–13?**
+
+**Was any language added after March concerning DDoS attacks, inability to manage positions, downtime, or inability to trade?**
+
+**Was any language added after May 19?**
+
+**Were lawyers, compliance personnel, engineering personnel, or management involved?**
+
+That could be much more revealing than the public document itself.
+
+I would specifically seek:
+
+> All drafts, redlines, approvals, internal communications, legal reviews and change logs relating to the BitMEX Risk Disclosure between January 1 and June 30, 2020, including documents concerning cybersecurity, denial-of-service attacks, platform downtime, inability to trade, inability to manage open positions, liquidation risk, connectivity failures and access risks.
+
+If the wording was created or materially expanded immediately after March, that would be very interesting. It still would not automatically prove an admission, but it could show BitMEX's evolving understanding of the risk.
+
+### One especially interesting wording point: “You must ensure that you are able to monitor positions ... at all times”
+
+BitMEX says customers must ensure that they can monitor their positions at all times. ([Wayback Machine][1])
+
+BitMEX will use that against traders.
+
+But it leads to a fairly obvious response:
+
+> **How could a customer satisfy that obligation when BitMEX's own infrastructure prevented the customer from reaching the account?**
+
+Again, don't claim the clause is invalid or contradictory.
+
+Use it to identify the factual tension:
+
+**Customer obligation:** monitor and manage position.
+
+**March condition:** BitMEX acknowledges customers could be prevented from reaching the trading engine.
+
+That makes the availability evidence particularly relevant.
+
+### A stronger way to combine the Terms and Risk Disclosure
+
+I think these documents work best together.
+
+The March 7 Terms say, in substance:
+
+**BitMEX has responsibility for maintaining an orderly market.**
+
+**BitMEX can halt trading.**
+
+**BitMEX will make reasonable efforts regarding availability.**
+
+The June Risk Disclosure acknowledges:
+
+**DDoS attacks can impair availability.**
+
+**Technical issues can make traders unable to manage leveraged positions.**
+
+**Loss of platform access can affect orders.**
+
+**Customers are expected to monitor their positions continuously.** ([Wayback Machine][1])
+
+Put together, your argument becomes:
+
+> **BitMEX's own contractual and risk materials recognize both sides of the problem. BitMEX expressly assumed responsibility for maintaining an orderly market and undertook reasonable efforts concerning service availability, while its later Risk Disclosure expressly acknowledged that denial-of-service attacks, technical failures and loss of access could prevent traders from managing leveraged positions. The key unanswered question is what BitMEX knew about these risks before March 13, what safeguards existed to address them, and why market or liquidation protections were not used when customer access became materially impaired.**
+
+That is quite compelling for discovery.
+
+The one thing I would **not** do yet is cite this June 8 Risk Disclosure as though it governed the claimant on March 12–13. We first need to establish whether an earlier version existed and what it said. Right now, its strongest use is as **post-event evidence of BitMEX's articulated understanding of the precise operational risks at issue**, plus a roadmap for targeted document requests. ([Wayback Machine][1])
+
+[1]: https://web.archive.org/web/20200608042715/https%3A//www.bitmex.com/app/riskDisclosure "Risk Disclosure - BitMEX"
