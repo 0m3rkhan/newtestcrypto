@@ -1,0 +1,198 @@
+Yes. I compared the **September 4, 2020 snapshot** with the **December 28, 2019 snapshot**, focusing especially on the provisions relevant to the March outage.
+
+### Bottom line
+
+The September snapshot does **not** show BitMEX removing the provisions that are most useful to your argument. In September—almost six months after the March event and more than three months after the May outage—BitMEX still said:
+
+* it was BitMEX's **“responsibility to maintain an orderly market”**;
+* BitMEX could **halt trading** because of market disruption or external events;
+* BitMEX would make **“reasonable efforts”** to ensure services were available;
+* BitMEX would use **“commercially reasonable efforts”** to avoid downtime during anticipated peak hours;
+* its affiliated trading arm supposedly received access and trading privileges on the **same terms as other users**. ([Wayback Machine][1])
+
+That's useful.
+
+There **were changes elsewhere**, however, and one in particular deserves more investigation.
+
+## December 2019 vs. September 2020
+
+| Provision                                        | Dec. 28, 2019                                             | Sept. 4, 2020                | Significance              |
+| ------------------------------------------------ | --------------------------------------------------------- | ---------------------------- | ------------------------- |
+| §1.12 orderly market                             | BitMEX's responsibility                                   | **Unchanged**                | **Helpful to you**        |
+| §1.12 power to halt trading                      | Yes                                                       | **Unchanged**                | **Helpful to you**        |
+| §7.3 reasonable efforts for availability         | Yes                                                       | **Unchanged**                | **Helpful to you**        |
+| §7.3 commercially reasonable efforts re downtime | Yes                                                       | **Unchanged**                | **Helpful to you**        |
+| §7.4 broad outage liability disclaimer           | Yes                                                       | **Essentially unchanged**    | Helps BitMEX              |
+| §9.2 negligence/liability limitation             | Yes                                                       | **Essentially unchanged**    | Helps BitMEX              |
+| §6.3 affiliated trading arm equal access         | Yes                                                       | **Unchanged**                | Potential discovery issue |
+| Risk Disclosure                                  | Not expressly incorporated in opening acceptance language | **Now expressly referenced** | **Worth investigating**   |
+| Restricted jurisdictions                         | Existing restrictions                                     | Ontario added by Sept.       | Probably unrelated        |
+
+The core liability provision also remained substantially intact: September §9.2 continued attempting to exclude certain damages arising from contract, tort—including negligence—and to cap aggregate liability based on the preceding six months of trading fees. ([Wayback Machine][1]) The December version already contained essentially the same protections. ([Wayback Machine][2])
+
+So again, I don't see evidence that after March BitMEX suddenly inserted a new **“we're not responsible for outages/negligence”** clause. Those protections were already there.
+
+## But there IS an interesting change: the Risk Disclosure Statement
+
+This caught my attention.
+
+The December 28 Terms say generally that by accessing the platform the customer agrees to the Terms. The archived December page does **not** show the phrase "Risk Disclosure" in the Terms text we retrieved. ([Wayback Machine][2])
+
+By September 4, the opening language specifically says that the customer acknowledges having:
+
+> read, considered and understood the **Risk Disclosure Statement**
+
+as well as the Privacy Notice before agreeing to the Terms. ([Wayback Machine][1])
+
+That could matter.
+
+### I would investigate when that change happened.
+
+Because now we have another timeline question:
+
+**December 2019:** Risk Disclosure apparently not expressly incorporated into the acceptance language.
+
+**March 12–13:** historic volatility/outage/liquidations.
+
+**May 19:** second outage with much stronger customer-protection procedures.
+
+**September:** Terms expressly tell customers they have read and understood a separate **Risk Disclosure Statement**. ([Wayback Machine][1])
+
+We should find the **first Wayback snapshot where that Risk Disclosure language appears**.
+
+And even more importantly, we should retrieve the Risk Disclosure itself.
+
+If the Risk Disclosure added or strengthened language concerning:
+
+* outages;
+* inability to access positions;
+* liquidation during downtime;
+* connectivity;
+* inability to cancel/close;
+* system failure;
+* market disruption;
+* DDoS/cyberattacks;
+* extreme volatility,
+
+then the timing could be very interesting.
+
+I would **not yet say BitMEX changed it because of March**. We don't have evidence of motive. But it is absolutely worth tracing.
+
+## More importantly, BitMEX did NOT remove the “orderly market” language
+
+September §1.12 still says:
+
+> **“It is our responsibility to maintain an orderly market”**
+
+and still expressly gives BitMEX discretion to halt trading due to **“market disruption or other relevant external events.”** ([Wayback Machine][1])
+
+This is nearly six months after March.
+
+That's important because BitMEX apparently continued to stand behind the proposition that **maintaining an orderly market was its responsibility**.
+
+For your report, I would say:
+
+> **BitMEX's characterization of maintaining an orderly market as its responsibility was not merely historical language appearing before the March 2020 incident. The same provision remained in BitMEX's Terms as of September 4, 2020, nearly six months after the March disruption and after BitMEX had experienced the separate May 19 outage. The provision continued to expressly authorize BitMEX to halt trading in response to market disruption or other relevant external events.** ([Wayback Machine][1])
+
+That's useful.
+
+## The availability provision also survived unchanged
+
+September §7.3 still provides that BitMEX:
+
+> **“shall make reasonable efforts”**
+
+to ensure Services are available and will use:
+
+> **“commercially reasonable efforts”**
+
+to avoid downtime during anticipated peak hours. ([Wayback Machine][1])
+
+The December provision contains the same obligations. ([Wayback Machine][2])
+
+And the September provision still expressly recognizes:
+
+**technical issues → network overload → system overload → service disruption.** ([Wayback Machine][1])
+
+That's important for foreseeability.
+
+### Your argument becomes stronger chronologically:
+
+**Before March:** BitMEX recognized system overload as a foreseeable risk and promised reasonable/commercially reasonable availability efforts.
+
+**During March:** BitMEX experienced precisely the type of severe system-access impairment contemplated by the provision.
+
+**After March:** BitMEX did not remove the reasonable-efforts obligation.
+
+**After May:** BitMEX still did not remove it.
+
+**September:** It remained in effect. ([Wayback Machine][1])
+
+That makes it harder to characterize §7.3 as meaningless boilerplate that BitMEX itself abandoned after the incident.
+
+## Same thing with the affiliated trading arm
+
+September still says the BitMEX trading arm primarily acted as a market maker, was supposed to be separated from the platform business, did not receive privileged order-flow/customer information, and received **access and trading privileges only on the same terms available to other users**. ([Wayback Machine][1])
+
+I continue to think this deserves discovery.
+
+The question is extremely simple for a nontechnical audience:
+
+> **If ordinary traders couldn't reach the trading engine on March 13, could BitMEX's own market-making operation reach it?**
+
+If the answer is **no**, that resolves the issue.
+
+If the answer is **yes**, then you would want to know **why and how**.
+
+The Terms themselves provide a legitimate reason to ask because BitMEX represented equal access.
+
+## The September Terms also preserve a useful distinction concerning external connectivity
+
+BitMEX's disclaimer says it does not warrant uninterrupted access and isn't responsible for interference caused by systems used for accessing the platform, including computer networks and the internet. ([Wayback Machine][1])
+
+But that's not necessarily the same factual scenario as:
+
+> **BitMEX's own internal authentication/access-control infrastructure became resource exhausted because of queries directed at a BitMEX feature.**
+
+That's why the March technical architecture matters so much.
+
+Your discovery should distinguish:
+
+**Customer's ISP failed**
+→ much stronger BitMEX disclaimer argument.
+
+versus
+
+**Internet generally failed**
+→ much stronger BitMEX disclaimer argument.
+
+versus
+
+**BitMEX's own internal access layer failed**
+→ potentially different question.
+
+versus
+
+**BitMEX's own noncritical Trollbox functionality exhausted internal resources and impaired trading access**
+→ potentially much more problematic.
+
+That distinction should be emphasized.
+
+## What September tells us overall
+
+I wouldn't present September as evidence that **BitMEX changed its Terms to cover up or protect itself from March**. So far, the evidence doesn't support that.
+
+There's potentially something more useful here:
+
+> **Despite experiencing the March 12–13 disruption and the May 19 outage, BitMEX continued through at least September 2020 to expressly characterize maintaining an orderly market as its responsibility, continued to reserve its ability to halt trading during market disruption, and continued to state that it would make reasonable and commercially reasonable efforts concerning service availability.** ([Wayback Machine][1])
+
+At the same time, **the September version now expressly incorporates/acknowledges a separate Risk Disclosure Statement in the acceptance language**, which the December archived Terms do not appear to do. ([Wayback Machine][1])
+
+### I think our next investigation should be very targeted:
+
+**Find exactly when the “Risk Disclosure Statement” was introduced into the Terms and retrieve every archived version of that Risk Disclosure from roughly December 2019 through September 2020.**
+
+That's where I would look next for a potentially meaningful post-March contractual change. If language about **outages, inability to trade, liquidations, connectivity, system failures, market suspension, or extreme volatility** suddenly appears after March 13, that would be far more interesting than the changes we've seen in the main Terms so far.
+
+[1]: https://web.archive.org/web/20200904224059/https%3A//www.bitmex.com/app/terms "Terms of Service - BitMEX"
+[2]: https://web.archive.org/web/20191228102626/https%3A//www.bitmex.com/app/terms "Terms of Service - BitMEX"
