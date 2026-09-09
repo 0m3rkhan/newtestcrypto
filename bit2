@@ -1,0 +1,225 @@
+Yes. I would simplify the theory considerably. For a non-technical reader, the story should be:
+
+**BitMEX did not merely “go offline.” The problem was that traders could not reliably control their positions while BitMEX’s market and risk systems could continue operating. In a highly leveraged market, that meant a customer could be unable to cancel, reduce, hedge, or add margin while the exchange could still move the position toward liquidation. Other exchanges—and BitMEX itself in other incidents—used safeguards designed to prevent exactly that kind of one-sided outcome.**
+
+That is the narrative I would use to justify discovery.
+
+## A simple six-part argument
+
+### 1. Traders were effectively locked out while the market kept moving
+
+BitMEX acknowledged that on March 13, 2020 the DDoS attack delayed or prevented requests going to and from the platform. It also said that although the trading engine continued operating, the authentication/access layer became so impaired that customers found it nearly impossible to reach that engine. ([BitMEX][1])
+
+For a layperson:
+
+> **Imagine your broker can still sell your position automatically, but you temporarily cannot reach the broker to close the position yourself.**
+
+That is the core problem.
+
+The issue is not merely that the website was unavailable. The issue is whether **BitMEX's automated liquidation machinery remained capable of acting against customers at a time when those customers did not have a comparable ability to protect themselves.**
+
+That is exactly what discovery should determine.
+
+---
+
+### 2. Protecting customers during outages was not a new or unusual idea
+
+Years before March 2020, BitMEX itself had responded to system problems by **suspending trading**.
+
+During a July 2017 technical failure, BitMEX suspended trading for more than four hours. Its postmortem says it scheduled the suspension and gave traders notice before stopping the engine. ([BitMEX][2])
+
+So BitMEX already understood:
+
+> **When the trading platform cannot operate normally, one possible risk-control response is to stop trading rather than allow an impaired market to continue.**
+
+[BitMEX — Postmortem: Downtime, July 5, 2017](https://www.bitmex.com/blog/postmortem-downtime-july-5-2017?utm_source=chatgpt.com)
+
+That helps answer a potential defense that there was simply “nothing BitMEX could do.”
+
+There plainly were operational alternatives.
+
+---
+
+### 3. Other crypto exchanges were already protecting leveraged traders during system outages before March 2020
+
+This is probably your strongest industry-practice evidence.
+
+#### Kraken — January 2018
+
+After Kraken experienced a major system-upgrade outage, it did several things before returning to normal leveraged trading:
+
+* cancelled all open orders;
+* returned funds tied to those orders;
+* **paused margin liquidations for at least 48 hours**;
+* disabled creation of new margin positions for at least 48 hours;
+* warned customers about the risks of restarting an illiquid market. ([Kraken Blog][3])
+
+That is extremely useful.
+
+A layman's version:
+
+> **Kraken did not simply turn the system back on and let leveraged customers immediately face liquidation. It gave them protection while the market normalized.**
+
+[Kraken — Returns with Free Trading, January 13, 2018](https://blog.kraken.com/news/kraken-returns-with-free-trading?utm_source=chatgpt.com)
+
+This supports an argument that by 2018 a major cryptocurrency venue understood that **margin liquidation during or immediately following a platform interruption could unfairly harm customers.**
+
+---
+
+### 4. Binance was already using “cancel before trading resumes” procedures
+
+This comparator is particularly strong because it closely resembles what BitMEX ultimately did in May 2020.
+
+In June 2018, Binance completed a system upgrade but **did not immediately resume trading**. It announced a future trading-resumption time and allowed customers to cancel orders before normal trading restarted. ([Binance][4])
+
+[Binance — System Upgrade Complete, June 27, 2018](https://www.binance.com/en-BH/support/announcement/detail/360005481092?utm_source=chatgpt.com)
+
+Then, in May 2019—almost a full year before the BitMEX March event—Binance explicitly announced that after maintenance it would provide customers a **30-minute window to cancel open orders before trading resumed**. ([Binance][5])
+
+[Binance — System Upgrade Notice, May 14, 2019](https://www.binance.com/en/support/announcement/detail/360028054052?utm_source=chatgpt.com)
+
+This gives you a very straightforward argument:
+
+> **By 2018–2019, another major crypto exchange was already using a controlled-reopening process in which customers were given an opportunity to cancel orders before ordinary trading resumed.**
+
+That is remarkably similar to BitMEX's May 2020 **Market Suspended / Cancel-Only** procedure.
+
+---
+
+### 5. Deribit shows that exchanges recognized a responsibility to address wrongful liquidations caused by their technology
+
+Deribit's October 31, 2019 event is a different type of failure, but it is valuable.
+
+A bug in Deribit's BTC index produced an erroneous price movement and triggered multiple invalid liquidations.
+
+Deribit publicly acknowledged:
+
+> the problem was caused by its system.
+
+It then restored affected accounts and reimbursed more than **150 BTC, approximately $1.3 million**. ([Deribit Insights][6])
+
+[Deribit — Flash Crash: A Letter from the Founders, November 1, 2019](https://insights.deribit.com/exchange-updates/deribit-flash-crash-a-letter-from-the-founders/?utm_source=chatgpt.com)
+
+Your argument should **not** be:
+
+> "Deribit reimbursed traders, therefore BitMEX legally had to reimburse traders."
+
+Instead:
+
+> **Before March 2020, another major crypto derivatives venue had already recognized that where exchange technology creates an unfair liquidation result, the venue can take corrective action rather than leave the entire loss with the customer.**
+
+That supports the broader idea that **protecting customers from exchange-caused liquidation harm was an understood industry concern.**
+
+---
+
+### 6. BitMEX itself later adopted essentially the safeguard you say was missing in March
+
+This is the comparison I would put in front of a judge, arbitrator, expert, or nontechnical reader.
+
+On May 19, 2020, BitMEX suffered another outage.
+
+This time BitMEX says:
+
+* **no liquidations occurred while the exchange was offline;**
+* the trading platform first reopened in **Market Suspended and Cancel-Only mode**;
+* customers were told when full trading would resume;
+* ordinary trading resumed only afterward. ([BitMEX][1])
+
+BitMEX also said its reopening procedures had been changed following review of previous downtime events and customer feedback. ([BitMEX][1])
+
+[BitMEX — Postmortem: Downtime, May 19, 2020](https://www.bitmex.com/blog/postmortem-downtime-19-may-2020?utm_source=chatgpt.com)
+
+In plain English:
+
+> **In March, customers allegedly could not reliably manage their positions while the market continued operating. Two months later, when BitMEX had another outage, it protected customers by preventing liquidations, reopening in cancel-only mode, giving customers time to manage orders, and only then restarting trading.**
+
+That comparison does **not by itself prove negligence**.
+
+But it creates a very reasonable discovery question:
+
+> **If BitMEX knew how to prevent liquidations and provide a controlled cancel-only reopening in May, what safeguards existed in March, why were they not activated, and when were the May procedures designed or approved?**
+
+That is exactly the kind of question discovery is meant to answer.
+
+---
+
+# The strongest pre-March-2020 comparator events
+
+I would prioritize these four.
+
+| Event                              | What happened                                       | Protective response                                                                            | Why it helps                                                                                                                           |
+| ---------------------------------- | --------------------------------------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| **BitMEX — July 2017**             | Technical failure / prolonged downtime              | Trading suspended                                                                              | Shows BitMEX itself had previously halted trading during system problems. ([BitMEX][2])                                                |
+| **Kraken — Jan. 2018**             | Major trading-system outage/upgrade                 | Orders cancelled; margin liquidations paused ≥48 hours; new margin disabled                    | Very strong evidence that a crypto venue recognized that leveraged traders needed protection after impaired access. ([Kraken Blog][3]) |
+| **Binance — June 2018 / May 2019** | Maintenance/restart                                 | Trading delayed while customers were allowed to cancel orders; 30-minute cancel window in 2019 | Strong precedent for controlled restart and cancel-before-trading procedures. ([Binance][4])                                           |
+| **Deribit — Oct. 2019**            | Exchange technology caused invalid BTC liquidations | Traders reimbursed; affected equity restored                                                   | Demonstrates pre-March-2020 recognition that exchange-created liquidation harm warranted remediation. ([Deribit Insights][6])          |
+
+Of these, **Kraken January 2018 may be the most powerful industry comparator** for your particular theory.
+
+Why?
+
+Because it deals directly with **margin liquidation**.
+
+Kraken could have simply reopened its system and allowed its automated margin rules to operate. Instead, it paused margin liquidations for at least two days.
+
+That speaks directly to the principle you are trying to establish:
+
+> **When users have just been denied normal access to a leveraged trading platform, it may be inappropriate to immediately allow automated liquidation mechanisms to operate against them before they have a reasonable opportunity to regain control of their positions.**
+
+---
+
+# Put the whole argument into one simple story
+
+For a nontechnical reader, I would present it approximately this way:
+
+> On March 12–13, 2020, Bitcoin experienced extraordinary volatility. This was exactly the time when leveraged traders most needed reliable access to their accounts. BitMEX has acknowledged that during the disruption customer requests were delayed or prevented and that users could find it nearly impossible to reach the trading engine. At the same time, BitMEX reported that its trading engine remained operational.
+>
+> This created a potentially unfair situation: the exchange's automated systems could continue operating while customers could not reliably control their own positions.
+>
+> The significance of this becomes clearer when compared with how other cryptocurrency exchanges had handled system interruptions before March 2020. Kraken paused margin liquidations for at least 48 hours after a major January 2018 outage. Binance repeatedly provided customers an opportunity to cancel outstanding orders before trading restarted after maintenance. Deribit compensated traders whose positions were improperly liquidated because of an exchange-system failure in October 2019. BitMEX itself had previously suspended trading during technical problems.
+>
+> Most importantly, when BitMEX suffered another outage only two months later, on May 19, 2020, it followed a materially different procedure: no liquidations occurred while the exchange was offline, the market reopened first in a suspended and cancel-only state, customers were notified when trading would resume, and ordinary trading restarted only afterward.
+>
+> These events do not by themselves prove that BitMEX was legally negligent on March 13. They do, however, provide a substantial basis to investigate whether reasonable protective mechanisms existed or were feasible, whether BitMEX considered using them, why they were not used, whether automated liquidations continued while customers could not access their accounts, and whether BitMEX's later procedures were developed in response to problems exposed by the March incident.
+
+That is the kind of statement I think can justify **discovery without overstating what you have already proven.**
+
+# Then tie every argument directly to discovery
+
+Your discovery request becomes much more compelling if you say you are trying to answer five specific factual questions:
+
+**1. Did BitMEX know customers could not reach the trading engine?**
+Request incident logs, API metrics, login/OTP failures, customer-support complaints, monitoring alerts and internal communications.
+
+**2. Did liquidation systems continue functioning while customers were locked out?**
+Request Liquidation Engine logs, Mark Price records, liquidation trigger records, account-level margin calculations and execution records.
+
+**3. Could BitMEX have suspended liquidations or trading?**
+Request March 2020 operational procedures, emergency controls, suspension functionality, prior outage procedures and system architecture.
+
+**4. Why was May 19 handled differently?**
+Request documents showing when Cancel-Only procedures were designed, tested and approved; meeting minutes; engineering tickets; incident-response changes; and any documents referring to lessons learned from March 13.
+
+**5. Was BitMEX already aware this type of event could happen?**
+Request materials concerning earlier outages, previous DDoS activity, capacity testing, stress testing, load-shedding, access-layer failures and the February 2020 attack activity BitMEX later described.
+
+This is where your argument can become significantly stronger.
+
+You are not asking the court to accept at the discovery stage that:
+
+> **"BitMEX was negligent."**
+
+You are showing that there is enough objective evidence to ask:
+
+> **"Why did BitMEX allow one side of the risk-management relationship—the exchange—to continue exercising control while the customers allegedly could not, when protective alternatives were already known and used in the industry?"**
+
+That is a much more compelling basis for obtaining the internal records you need.
+
+If you're building this into the BRIC report, the next useful deliverable would be a **2–3 page “Basis for Further Discovery” section**, written in nontechnical/legal-investigative language, with the Kraken, Binance, Deribit, pre-2020 BitMEX, March 2020 BitMEX and May 2020 BitMEX events laid out chronologically with footnotes.
+
+[1]: https://www.bitmex.com/blog/postmortem-downtime-19-may-2020?utm_source=chatgpt.com "Postmortem: Downtime, 19 May 2020 - BitMEX Blog"
+[2]: https://www.bitmex.com/blog/postmortem-downtime-july-5-2017?utm_source=chatgpt.com "Postmortem: Downtime, July 5, 2017 - BitMEX Blog"
+[3]: https://blog.kraken.com/news/kraken-returns-with-free-trading?utm_source=chatgpt.com "Kraken Returns with Free Trading - Kraken Blog Kraken Blog"
+[4]: https://www.binance.com/en-BH/support/announcement/detail/360005481092?utm_source=chatgpt.com "System Upgrade Complete | Binance"
+[5]: https://www.binance.com/en/support/announcement/detail/360028054052?utm_source=chatgpt.com "System Upgrade Notice | Binance"
+[6]: https://insights.deribit.com/exchange-updates/deribit-flash-crash-a-letter-from-the-founders/?utm_source=chatgpt.com "Deribit Flash Crash - A Letter from the Founders - Deribit Insights"
