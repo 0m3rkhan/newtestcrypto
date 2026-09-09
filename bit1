@@ -1,0 +1,318 @@
+Yes. There is a potentially strong negligence theory here, but I would frame it carefully. The most persuasive argument is not simply that “BitMEX went down and traders lost money.” Outages can happen. The stronger theory is that **BitMEX knew customers could not reliably reach the trading engine during an extreme market event, yet did not appear to impose the kinds of protective controls that it had used before, that a competing derivatives venue used during the same March 2020 crash, and that BitMEX itself used two months later—such as suspending trading, allowing cancellations before reopening, and preventing liquidations while access was impaired.**
+
+That does not by itself prove legal negligence. Duty, contractual disclaimers, governing law, causation, and damages still matter. But the historical record gives you several serious arguments.
+
+### 1. The strongest argument: BitMEX created an asymmetry between its automated systems and its customers
+
+BitMEX's own March 16, 2020 postmortem is unusually helpful. BitMEX said the DDoS attacks "delayed or prevented requests going to and from the BitMEX platform," that messages were delayed before reaching the trading engine, and that the authentication/access-control layer became so impaired that it was "nearly impossible to reach the engine." At the same time, BitMEX said **the trading engine was operating normally and market data was not disrupted**. ([BitMEX][1])
+
+That creates the key factual issue:
+
+**BitMEX's internal market and risk machinery could continue functioning while some traders could not reliably interact with their positions.**
+
+For a leveraged derivatives venue, that is materially different from an ordinary website outage. Customers needed access precisely because market prices were moving violently and positions could cross liquidation thresholds.
+
+A negligence argument could therefore be stated as:
+
+> Once BitMEX knew or reasonably should have known that customer access to the trading engine was materially impaired, continuing automated position-management or liquidation processes without giving customers a corresponding ability to cancel, reduce, add margin to, or otherwise manage their exposure created a foreseeable and avoidable imbalance.
+
+That is much stronger than arguing that BitMEX had a general duty to guarantee uninterrupted uptime.
+
+### 2. BitMEX's own pre-March practice shows that suspending trading operations was an available response
+
+This is especially important because it predates the March event.
+
+On **February 19, 2019**, BitMEX reported a technical outage of only about one minute and expressly stated that **"all trading engine operations were suspended."** ([BitMEX][2])
+
+That gives you a very useful before/after comparison:
+
+| Event                           | Access / system problem                                                                           | Protective response                                                                                                      |
+| ------------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ |
+| Feb. 19, 2019 BitMEX outage     | Technical outage                                                                                  | **All trading-engine operations suspended**                                                                              |
+| Mar. 13, 2020 BitMEX disruption | Users could have requests delayed/prevented and BitMEX said reaching engine was nearly impossible | Trading engine reportedly continued operating                                                                            |
+| May 19, 2020 BitMEX outage      | Trading-engine outage                                                                             | **No liquidations while offline; restart in Market Suspended / Cancel-Only mode; advance notice before trading resumed** |
+
+The February 2019 event undermines an argument that suspending trading was foreign to BitMEX's architecture or operational philosophy.
+
+The URL is: [BitMEX — Notice of Minor System Outage, 19 February 2019](https://www.bitmex.com/blog/notice-of-minor-system-outage-19-february-2019?utm_source=chatgpt.com)
+
+### 3. The May 19, 2020 event is probably your strongest BitMEX comparator
+
+Two months after the March event, BitMEX experienced another significant outage.
+
+BitMEX's May 22 postmortem states that the trading engine was offline from approximately **12:00 UTC until 13:40 UTC**. Most importantly, BitMEX expressly stated:
+
+* **no liquidations occurred while the exchange was offline;**
+* at 13:23 the platform came back in **"Market Suspended and Cancel-Only mode";**
+* customers were notified that full trading would resume at **13:40 UTC**;
+* trading then resumed at that separately announced time. ([BitMEX][3])
+
+That sequence matters enormously.
+
+It gave traders approximately 17 minutes in which the market remained suspended but customers could cancel orders before ordinary trading restarted.
+
+BitMEX also acknowledged in that postmortem that outages have a **"significant impact"** on customers and discussed its efforts to improve resiliency and downtime procedures. ([BitMEX][3])
+
+Your argument is not necessarily:
+
+> "The May procedure proves BitMEX was legally required to follow it in March."
+
+That is too strong.
+
+The better argument is:
+
+> **The May procedure demonstrates that protections capable of reducing customer harm during impaired platform access were feasible and consistent with BitMEX's own risk-management approach. The question is why comparable protections were not applied during the far more volatile March 13 event.**
+
+That is a classic foreseeability / reasonable-alternative argument.
+
+[BitMEX — Postmortem: Downtime, 19 May 2020](https://www.bitmex.com/blog/postmortem-downtime-19-may-2020?utm_source=chatgpt.com)
+
+### 4. BitMEX itself said after March that it was developing protocols for suspension and resumption
+
+This is another important admission-like fact.
+
+In the March 16 postmortem, BitMEX said that following the incident it was developing public-facing protocols around:
+
+**"downtime, market suspension, resumption, and communication."** ([BitMEX][1])
+
+That can support this inference:
+
+BitMEX recognized immediately after the March incident that **market suspension and controlled resumption were appropriate subjects of an outage-response procedure**.
+
+Then, on May 19, we see exactly that kind of procedure in practice:
+
+**downtime → restore engine → market suspended → cancel-only → advance notice → full trading.**
+
+That chronology is potentially powerful:
+
+**March 13 failure → March 16 announcement of new suspension/resumption procedures → May 19 deployment of controlled restart safeguards.**
+
+Be careful with causation language. You can say the chronology is **consistent with BitMEX changing or formalizing its procedures after March**. Unless discovery confirms it, don't say the May procedure was definitively adopted "because traders lost money in March."
+
+### 5. Deribit provides a strong same-market, same-day industry comparator
+
+Deribit's March 14, 2020 postmortem is particularly relevant because it concerns the **same March 12–13 Bitcoin crash**.
+
+Deribit explained that it already had a form of **circuit breaker** designed specifically to prevent liquidation cascades and massive selloffs. It described the mechanism as a trading halt triggered by sufficiently rapid index-price movement and expressly compared the concept to circuit breakers used in traditional finance. During the night of March 13, Deribit said this circuit breaker triggered several times. ([Deribit Insights][4])
+
+Deribit wrote that the purpose was:
+
+* to avoid massive selloffs;
+* to allow market participants time to catch up with the market;
+* to maintain some degree of safety during extreme volatility. ([Deribit Insights][4])
+
+That is excellent industry-practice evidence.
+
+The argument becomes:
+
+> During the exact market event at issue, another major crypto derivatives exchange recognized that rapid market movements and liquidation cascades presented enough risk to justify automatically interrupting trading and giving participants time to react.
+
+It doesn't establish that BitMEX was legally required to copy Deribit. But it is relevant to **foreseeability and reasonable risk controls within the crypto derivatives industry itself**.
+
+[Deribit — March Market Crash, March 14, 2020](https://insights.deribit.com/exchange-updates/march-market-crash/?utm_source=chatgpt.com)
+
+### 6. Deribit's 2019 flash-crash response is also useful because it shows remediation when exchange systems caused invalid liquidations
+
+On October 31, 2019, Deribit had an index-calculation problem that caused a flash crash and multiple invalid liquidations.
+
+Deribit publicly said:
+
+> "This was a fault of our system; therefore, we take responsibility for the incident."
+
+It then compensated affected traders, restoring relevant account equity to pre-crash levels and reimbursing more than **150 BTC, approximately $1.3 million**. ([Deribit Insights][5])
+
+That is not identical to the BitMEX March situation—the Deribit problem was an erroneous index calculation, while BitMEX attributed March 13 to a DDoS/access-layer failure.
+
+But it establishes another useful industry principle:
+
+> When an exchange's own technological failure prevents normal market operation or produces invalid liquidation outcomes, remediation of customer harm was not unheard of in the crypto derivatives industry before March 2020.
+
+[Deribit — Flash Crash: A Letter From the Founders, November 1, 2019](https://insights.deribit.com/exchange-updates/deribit-flash-crash-a-letter-from-the-founders/?utm_source=chatgpt.com)
+
+### 7. BitMEX actually compensated one category of traders after March 13
+
+This point cuts both ways, but I think it helps your argument.
+
+BitMEX's March 16 postmortem says it identified **156 ETHUSD accounts** whose Last Price stops were improperly triggered because market orders were processed late following the first downtime. BitMEX refunded **40.297 XBT**. ([BitMEX][1])
+
+So it would be inaccurate to say:
+
+> "BitMEX compensated nobody for anything connected with the March outage."
+
+They did.
+
+But that creates a potentially sharper question:
+
+> **Why did BitMEX recognize and compensate one identifiable category of losses caused by delayed order processing, while allegedly declining to compensate traders whose inability to reach the platform prevented them from managing positions that later liquidated?**
+
+The legal and factual distinction may be that BitMEX could definitively identify the ETH stop-processing error as a platform-generated error, whereas causation for other liquidations could be disputed.
+
+Still, it is very useful because it shows BitMEX accepted the proposition that **platform-access/timing failures can create compensable trading losses**.
+
+### 8. BitMEX had designed cancellation requests to receive special protection during overload years before March
+
+This is a subtle but potentially very important technical point.
+
+BitMEX's API changelog says that starting in November 2017 the trading engine would begin load-shedding when request queues became too deep. Critically, BitMEX stated:
+
+> **load shedding did not apply to order cancellations.**
+
+In other words, BitMEX had already recognized years before March 2020 that, during system stress, **the ability to cancel orders deserved preferential treatment**. ([BitMEX][6])
+
+This could support an argument that BitMEX understood the risk inherent in preventing customers from reducing risk during overload.
+
+The theory would be:
+
+> BitMEX had already architected its ordinary overload protections to preserve cancellation capability. That makes it foreseeable that loss of cancellation access during the March 2020 disruption presented a material customer-protection problem.
+
+This may become especially compelling if the trader attempted to cancel or amend orders during the outage and you have failed API requests or login attempts.
+
+### 9. Traditional derivatives-market standards support the same general principle
+
+You should be careful here because BitMEX was **not necessarily subject to these particular U.S. exchange regulations as a registered DCM**, so I would not present CFTC or SEC rules as regulations BitMEX violated unless counsel has independently established jurisdiction and registration obligations.
+
+But they are useful as evidence of **recognized financial-market operational-risk principles**.
+
+CFTC regulations applicable to registered designated contract markets require emergency procedures, backup facilities, and disaster-recovery plans supporting timely recovery and resumption of operations. They also require automated-system testing and risk oversight. ([Legal Information Institute][7])
+
+The CFTC's longstanding system-safeguard framework requires periodic testing intended to ensure that trading systems are reliable, secure, and possess adequate scalable capacity. ([Federal Register][8])
+
+Likewise, SEC Regulation SCI—adopted well before 2020—requires covered market infrastructures to maintain systems with adequate **capacity, integrity, resiliency, availability and security** in order to preserve operational capability and promote fair and orderly markets. ([Federal Register][9])
+
+Again, the proper wording is:
+
+> These rules are not cited here as establishing that BitMEX was directly subject to the U.S. DCM or Regulation SCI frameworks. They are relevant as contemporaneous evidence of the operational-resilience principles recognized for electronic trading venues: resilient access, tested incident response, orderly market operation, controlled recovery, and protection against disorderly trading during technology failures.
+
+That is much safer.
+
+### 10. Circuit breakers were plainly established financial-market practice by March 2020
+
+You can reinforce the Deribit comparison with traditional markets.
+
+CME described price limits and circuit breakers as mechanisms preventing markets from moving too far or too quickly, and U.S. market-wide circuit breakers actually triggered repeatedly during the COVID volatility of March 2020—including on **March 9, March 12, March 16, and March 18**. ([CME Group][10])
+
+That makes it difficult to characterize temporary suspension during extreme market dislocation as some extraordinary or novel remedy.
+
+The broader standard was:
+
+**when ordinary market functioning becomes impaired or disorderly, temporarily interrupting trading can protect price discovery and market participants.**
+
+### 11. Your causation theory should focus on loss of the opportunity to manage the position
+
+This is critical.
+
+You don't necessarily want to argue:
+
+> "But for the outage, Bitcoin would not have fallen."
+
+That is extraordinarily difficult to prove. Bitcoin was collapsing across global markets.
+
+Instead:
+
+> **But for BitMEX's failure to provide effective customer access—or to suspend liquidation/trading while effective access was unavailable—the trader would have had a meaningful opportunity to reduce, close, hedge, cancel, amend, or add collateral to the position before liquidation.**
+
+That is a far narrower and more provable causal theory.
+
+For your specific trader, you want evidence showing:
+
+**before access failure:** position state and available options;
+
+**during access failure:** attempted login/API/order actions;
+
+**while trader was impaired:** Mark Price, liquidation threshold and market movement;
+
+**after access returned:** position already liquidated or materially worsened.
+
+The strongest case would contain actual evidence that the trader attempted to act.
+
+### 12. The liquidation engine continuing while users could not reach it is the core fairness argument
+
+BitMEX publicly described its Liquidation Engine as an automated risk-management system that could cancel orders, partially liquidate positions and ultimately take control of a position after Mark Price crossed the liquidation threshold. ([BitMEX][11])
+
+Put that together with BitMEX's March 16 statement:
+
+**Trading engine operating.
+Market data operating.
+Customers nearly unable to reach engine.
+Automated risk systems potentially continuing.**
+
+Your expert could potentially frame this as an **asymmetric-control condition**:
+
+> The exchange retained automated control over customer positions while customers temporarily lost effective control over those same positions.
+
+For a leveraged venue offering liquidation-sensitive products, that is likely one of the strongest technical facts in the case.
+
+### 13. Foreseeability is strengthened by BitMEX's February 15 attempted attack
+
+There is an additional fact in the March 16 postmortem that may matter a lot.
+
+BitMEX said the attackers responsible for March 13 had conducted a **similar but unsuccessful attack on February 15, 2020**, approximately one month earlier. BitMEX stated that it believed the attackers identified their target then and waited for a moment when an attack would have maximum market impact. ([BitMEX][1])
+
+That could materially strengthen a foreseeability argument:
+
+> BitMEX was not confronting a wholly unprecedented attack vector without warning. According to its own account, substantially similar malicious activity had targeted the platform about one month earlier.
+
+This does **not** automatically prove that BitMEX acted unreasonably in failing to stop the March attack. You would need technical discovery concerning what BitMEX detected on February 15 and what remediation was reasonably available.
+
+But it supports discovery into:
+
+* February 15 incident reports;
+* security alerts;
+* internal tickets;
+* Trollbox/database vulnerability analysis;
+* remediation decisions;
+* penetration/load testing;
+* escalation;
+* whether security personnel rated recurrence as likely.
+
+This may be a major negligence avenue.
+
+### 14. BitMEX admitted the vulnerable component was old and poorly maintained
+
+Another potentially useful fact from the same March 16 report: BitMEX described the Trollbox as one of the platform's earliest features and explained that the PostgreSQL statistics needed by the query optimiser were **not being refreshed frequently enough**. That allowed specially crafted requests to force extremely expensive scans, eventually exhausting resources. ([BitMEX][1])
+
+That moves the story away from:
+
+> "An unforeseeable hacker overwhelmed BitMEX."
+
+toward a potentially more nuanced question:
+
+> **Did a known or discoverable weakness in an old, non-core chat feature unnecessarily compromise access to a leveraged derivatives trading platform?**
+
+BitMEX itself later said it was reviewing older and vulnerable components to simplify, decouple and isolate systems. ([BitMEX][1])
+
+That could support a **systems architecture / failure-isolation** negligence theory.
+
+---
+
+## The negligence theory I would build
+
+If this were being prepared for counsel or an expert report, I would organize the argument around five propositions:
+
+1. **Foreseeability:** BitMEX operated highly leveraged products where loss of market access during rapid price movement predictably exposed customers to liquidation. BitMEX had experienced prior outages and a similar DDoS attempt on February 15. ([BitMEX][2])
+
+2. **Reasonable protective alternatives existed:** BitMEX previously suspended all trading-engine operations during an outage; Deribit had circuit breakers operating during the March crash; and BitMEX itself subsequently implemented no-liquidation and cancel-only procedures during May's outage. ([BitMEX][2])
+
+3. **Asymmetric platform control existed:** BitMEX said the trading engine and market data remained operational while customers found it nearly impossible to reach the trading engine. ([BitMEX][1])
+
+4. **BitMEX recognized outage-related customer harm:** It reimbursed 156 ETHUSD accounts for delayed-order effects and subsequently developed protocols for market suspension, controlled resumption and communications. ([BitMEX][1])
+
+5. **Causation should be trader-specific:** demonstrate that a particular trader attempted or reasonably would have been able to close, reduce, cancel, amend, hedge, or add collateral absent the access impairment, and quantify the difference between that outcome and the actual liquidation.
+
+That is substantially stronger than saying simply **"industry standards required BitMEX to reimburse everyone."** I have not found evidence supporting such a categorical standard.
+
+The strongest evidence instead supports an argument that **an electronic leveraged-derivatives venue should have reasonable mechanisms to prevent automated liquidation or continued market exposure from operating to customers' detriment when the venue itself has materially impaired those customers' ability to interact with their positions.**
+
+The next thing I would investigate is even more important: **whether the March 13 BitMEX logs show that the trader's Mark Price/liquidation process continued normally during precisely the same seconds that his login, OTP, API, amendment, or cancellation attempts were failing.** If that timing lines up, it could turn the general negligence theory into a highly specific causation narrative.
+
+[1]: https://www.bitmex.com/blog/how-we-are-responding-to-last-weeks-ddos-attacks?utm_source=chatgpt.com "How We Are Responding to the 13 March DDoS Attacks"
+[2]: https://www.bitmex.com/blog/notice-of-minor-system-outage-19-february-2019 "Notice of Minor System Outage 19 February 2019 - BitMEX Blog"
+[3]: https://www.bitmex.com/blog/postmortem-downtime-19-may-2020 "Postmortem: Downtime, 19 May 2020 - BitMEX Blog"
+[4]: https://insights.deribit.com/exchange-updates/march-market-crash/ "March Market Crash - Deribit Insights"
+[5]: https://insights.deribit.com/exchange-updates/deribit-flash-crash-a-letter-from-the-founders/ "Deribit Flash Crash - A Letter from the Founders - Deribit Insights"
+[6]: https://www.bitmex.com/static/md/en-US/apiChangelog?utm_source=chatgpt.com "BitMEX API Changelog"
+[7]: https://www.law.cornell.edu/cfr/text/17/38.1050?utm_source=chatgpt.com "17 CFR § 38.1050 - Core Principle 20. - Law.Cornell.Edu"
+[8]: https://www.federalregister.gov/documents/2015/12/23/2015-32143/system-safeguards-testing-requirements?utm_source=chatgpt.com "System Safeguards Testing Requirements"
+[9]: https://www.federalregister.gov/documents/2014/12/05/2014-27767/regulation-systems-compliance-and-integrity?utm_source=chatgpt.com "Regulation Systems Compliance and Integrity"
+[10]: https://www.cmegroup.com/?utm_source=chatgpt.com "Understanding Price Limits and Circuit Breakers"
+[11]: https://www.bitmex.com/blog/bitmex-insurance-fund-your-questions-answered "BitMEX Insurance Fund: Your Questions Answered - BitMEX Blog"
