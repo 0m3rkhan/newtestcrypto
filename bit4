@@ -1,0 +1,394 @@
+Yes. This **December 28, 2019 archived Terms of Service is important**, and there are several provisions that can support your discovery theory. But there are also provisions BitMEX will almost certainly use against the claim. The best approach is to use the Terms to show that **BitMEX expressly assumed certain operational responsibilities and had discretionary tools available**, while anticipating their uptime/liability defenses.
+
+One important preliminary point: the archived page itself shows **XBTM20 actively listed on December 28, 2019**, which helps establish this is genuinely contemporaneous to the contract you are investigating. ([Wayback Machine][1])
+
+[Archived BitMEX Terms of Service — December 28, 2019](https://web.archive.org/web/20191228102626/https://www.bitmex.com/app/terms?utm_source=chatgpt.com)
+
+## 1. The strongest provision: BitMEX expressly said it had a responsibility to maintain an orderly market
+
+This is probably the most important language in the entire Terms.
+
+Section **1.12** states:
+
+> **“It is our responsibility to maintain an orderly market”**
+
+and then says BitMEX may, in its discretion, **halt trading because of market disruption or other relevant external events**. ([Wayback Machine][1])
+
+This is significant for two reasons.
+
+First, BitMEX did not merely reserve the ability to operate a platform. **It expressly characterized maintaining an orderly market as its responsibility.**
+
+Second, BitMEX expressly identified **halting trading** as a tool available to carry out that responsibility.
+
+That fits directly into your March 13 theory.
+
+### How I would use it
+
+> **BitMEX's December 2019 Terms expressly stated that it was BitMEX's “responsibility to maintain an orderly market” and expressly reserved BitMEX's ability to halt trading in response to market disruption or other relevant external events. Accordingly, market suspension was not an unfamiliar or unavailable remedy. Discovery is warranted to determine whether BitMEX considered exercising that authority during the extraordinary market conditions and platform-access disruption of March 12–13, 2020; what criteria governed that decision; and why trading and/or liquidation processes were permitted to continue while customer access was materially impaired.**
+
+That's a strong discovery argument.
+
+---
+
+# 2. Section 7.3 may be even more useful than I expected
+
+This is the second provision I would highlight.
+
+BitMEX expressly said:
+
+> **“HDR shall make reasonable efforts to ensure that the Services are available to you.”**
+
+It then acknowledged that access could be disrupted by maintenance, technical issues, network/system overloads or events outside its control.
+
+But immediately afterward BitMEX said:
+
+> **“HDR will use commercially reasonable efforts to avoid downtime of the Services during anticipated peak hours”**
+
+although it also disclaimed liability if services became unavailable. ([Wayback Machine][1])
+
+This matters.
+
+The Terms do **not** simply say:
+
+> "We have no responsibility whatsoever for availability."
+
+They actually establish two standards of conduct:
+
+**reasonable efforts to ensure availability**
+
+and
+
+**commercially reasonable efforts to avoid downtime during anticipated peak hours.**
+
+That gives you a potentially much more concrete discovery question.
+
+### Your argument becomes:
+
+> **Whether BitMEX satisfied its own contractual standard of “reasonable efforts” and “commercially reasonable efforts” cannot be determined solely from the fact that a DDoS attack occurred. It requires examination of what BitMEX knew, what safeguards it maintained, what prior warning it possessed, what alternatives were available, and what actions it took once customer access became materially impaired.**
+
+That is excellent justification for discovery.
+
+---
+
+# 3. This changes how I would frame the February 15 prior attack
+
+This becomes considerably more interesting when paired with §7.3.
+
+BitMEX later reported that substantially similar attack activity had occurred approximately a month before March 13.
+
+Now combine that with the contractual language:
+
+**BitMEX:** commercially reasonable efforts to avoid downtime.
+
+**February:** similar attempted attack.
+
+**March:** successful attack severely impairs customer access.
+
+The relevant question isn't simply:
+
+> Did BitMEX cause the DDoS attack?
+
+Obviously not.
+
+The question becomes:
+
+> **After the February warning, what did “commercially reasonable efforts” require BitMEX to do to protect the platform against recurrence?**
+
+That is an excellent discovery question.
+
+You want:
+
+February incident report → vulnerability identified → remediation recommended → remediation performed/not performed → testing → residual risk → March failure.
+
+If internal documents show the vulnerability was identified but remediation was delayed, your case becomes considerably more interesting.
+
+---
+
+# 4. Section 7.3 specifically mentions system overloads
+
+This is another helpful detail.
+
+BitMEX's Terms expressly contemplated:
+
+> technical issues and **network and system overloads**
+
+as reasons availability could be disrupted. ([Wayback Machine][1])
+
+That matters because BitMEX cannot easily characterize system overload as a completely unimaginable operational condition.
+
+Their own Terms anticipated it.
+
+And BitMEX's March postmortem says the attack ultimately resulted in severe resource exhaustion.
+
+So you can say:
+
+> **System overload was an expressly contemplated availability risk under BitMEX's own Terms. Discovery should therefore determine what controls BitMEX maintained to address that recognized risk and whether those controls functioned as designed on March 13.**
+
+Again, this doesn't prove negligence.
+
+It supports **foreseeability**.
+
+---
+
+# 5. Section 7.5 is surprisingly helpful for your account-specific evidence
+
+Section 7.5 says users must immediately notify BitMEX if they become aware of:
+
+* a Service malfunction;
+* a trading error;
+* a material malfunction;
+* a connectivity problem adversely affecting access or use. ([Wayback Machine][1])
+
+Why is that useful?
+
+Because BitMEX's own Terms contemplated customers experiencing **material connectivity problems adversely affecting their use of the trading service** and created a reporting mechanism for them.
+
+So if your trader:
+
+* emailed support;
+* submitted tickets;
+* tried to log in;
+* received OTP failures;
+* submitted API requests;
+* attempted cancellations;
+* complained immediately afterward,
+
+those records become important evidence.
+
+### Discovery question
+
+> **What customer complaints and notifications did BitMEX receive under §7.5 during the March 13 incident, when were they received, how many customers reported inability to access or manage positions, and how did BitMEX respond?**
+
+That's potentially a very useful document request.
+
+---
+
+# 6. Section 6.3 creates an interesting equal-access issue
+
+This one is subtle but worth investigating.
+
+BitMEX disclosed that HDR had its own trading arm that acted primarily as a market maker.
+
+BitMEX represented that the trading arm was separated from the exchange operation and importantly said:
+
+> the trading arm received **“access and trading privileges only on the same terms as are available to any other user.”** ([Wayback Machine][1])
+
+Now think about March 13.
+
+If ordinary customers could not reach the trading engine, you have a legitimate discovery question:
+
+> **Was BitMEX's affiliated trading arm equally unable to access the trading engine?**
+
+Don't accuse them of having preferential access without evidence.
+
+Instead ask for it.
+
+This could justify discovery of:
+
+* trading-arm connection architecture;
+* API connectivity;
+* order submissions during the outage;
+* rejected/delayed requests;
+* network paths;
+* trading privileges;
+* timestamps.
+
+### Potential argument
+
+> **Because BitMEX's Terms represented that its affiliated trading arm would receive access and trading privileges only on the same terms as other users, discovery should establish whether that equality of access was maintained during the March 13 disruption.**
+
+That is a very legitimate question.
+
+---
+
+# 7. The definition of "Trading Platform" helps defeat an overly narrow "engine was fine" response
+
+Look at the definition.
+
+The Terms define the **Trading Platform** broadly to include the BitMEX website, mobile applications, **APIs and other media relating to the trading platform**. ([Wayback Machine][1])
+
+This is helpful.
+
+Suppose BitMEX says:
+
+> "Our trading engine was functioning normally."
+
+Your response is:
+
+> **That's not the whole service customers contracted to access.**
+
+The Terms define the Trading Platform as much more than the matching engine.
+
+So the relevant availability inquiry includes:
+
+**Authentication → API → website → account access → order submission → trading engine.**
+
+A perfectly functioning matching engine doesn't necessarily establish that the **Trading Platform**, as contractually defined, was reasonably available.
+
+That fits beautifully with the **asymmetric availability** concept we discussed earlier.
+
+---
+
+# 8. Section 1.7 actually identifies "closing positions" as an ordinary trading instruction
+
+The Terms specifically discuss instructions transmitted through APIs and expressly identify instructions concerning:
+
+> **“order placement or the closing of positions”**. ([Wayback Machine][1])
+
+That's useful because you aren't inventing the idea that closing a position is an essential trading function.
+
+BitMEX's own Terms recognized it.
+
+Therefore:
+
+> **Discovery should determine whether the customer retained a functional ability to submit instructions concerning order placement, cancellation, amendment and closing positions during the period in which BitMEX's automated liquidation processes remained active.**
+
+---
+
+# 9. The Force Majeure clause isn't as absolute as BitMEX might argue
+
+Section 14.1 protects either party from liability for delays caused by matters **“outside its reasonable control,”** including malicious acts of damage. ([Wayback Machine][1])
+
+BitMEX could argue:
+
+> "DDoS = malicious act = force majeure."
+
+But notice the qualifying concept:
+
+**outside its reasonable control.**
+
+That creates factual questions.
+
+You aren't necessarily challenging whether attackers were outside BitMEX's control.
+
+You're asking whether:
+
+**the vulnerability was reasonably preventable;**
+
+**the consequences could reasonably have been mitigated;**
+
+**the prior February attack gave warning;**
+
+**the Trollbox architecture unnecessarily propagated the failure;**
+
+**market suspension could have mitigated losses;**
+
+**liquidations could have been suspended;**
+
+**cancel-only mode was technically available.**
+
+That's the distinction between:
+
+> **preventing the attack**
+
+and
+
+> **mitigating the consequences of the attack.**
+
+Even if the attack itself qualifies as force majeure, that does not automatically answer every question about BitMEX's response. The ultimate interpretation is an English-law issue for counsel because the Terms specify English governing law. ([Wayback Machine][1])
+
+---
+
+# 10. There is an important weakness: BitMEX wrote extremely aggressive liability disclaimers
+
+You need to deal with this openly.
+
+BitMEX has substantial contractual defenses.
+
+Sections 6.2 and 7.2–7.4 say, among other things:
+
+* use is at the customer's own risk;
+* uninterrupted/error-free service is not warranted;
+* services are provided "as is" and "as available";
+* BitMEX disclaims liability for continued availability;
+* BitMEX disclaims liability for interruptions and delays. ([Wayback Machine][1])
+
+And §9.2 expressly attempts to limit liability in contract and tort, **including negligence**, and caps certain liability at trading fees received during the preceding six months. ([Wayback Machine][1])
+
+You cannot ignore those.
+
+But notice something interesting.
+
+Section 9.1 itself says the exclusions do not apply to:
+
+**fraud**
+
+or
+
+**anything that cannot lawfully be excluded or limited under Applicable Law.** ([Wayback Machine][1])
+
+And the agreement says **English law governs both the Terms and related non-contractual obligations**. ([Wayback Machine][1])
+
+That means an English-law contracts expert should examine whether these limitations apply to the precise alleged conduct and damages.
+
+I would not draw that legal conclusion ourselves.
+
+---
+
+# 11. Most importantly: don't let "no guarantee of uptime" become the whole case
+
+I think this is where your theory needs to be very precise.
+
+BitMEX will probably say:
+
+> **We expressly warned traders that the platform might become unavailable.**
+
+That's true. ([Wayback Machine][1])
+
+Your response should **not** be:
+
+> "BitMEX promised uninterrupted service."
+
+They didn't.
+
+Instead:
+
+> **The claim is not based merely on the occurrence of downtime. BitMEX expressly undertook to make reasonable efforts to maintain service availability and commercially reasonable efforts to avoid downtime during anticipated peak periods. BitMEX also expressly stated that maintaining an orderly market was its responsibility and reserved the ability to halt trading during market disruption. The relevant issue therefore is not whether BitMEX guaranteed uninterrupted service, but whether its preparation for and response to the March 13 impairment was reasonable once customers could no longer effectively manage leveraged positions while exchange-controlled risk and liquidation processes continued.** ([Wayback Machine][1])
+
+**That is the argument I would lead with.**
+
+---
+
+# 12. The Terms actually give us a very good discovery framework
+
+I would build the request around these contractual statements:
+
+| BitMEX's December 2019 Terms                                          | What discovery should determine                                                                  |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| **"responsibility to maintain an orderly market"** (§1.12)            | What did BitMEX consider an "orderly market" during March 13? What were the suspension criteria? |
+| May halt trading for **market disruption** (§1.12)                    | Was suspension considered? Who decided not to halt?                                              |
+| **"reasonable efforts"** to ensure availability (§7.3)                | What availability controls existed?                                                              |
+| **"commercially reasonable efforts"** to avoid downtime (§7.3)        | What capacity, DDoS, redundancy and contingency measures existed?                                |
+| Terms expressly anticipate **system overloads** (§7.3)                | What overload testing/protection existed?                                                        |
+| Customers must report material connectivity problems (§7.5)           | How many complaints/tickets were received during March 13?                                       |
+| Trading Platform includes **APIs** (§Definitions)                     | Were API/order/cancel/close pathways actually functional?                                        |
+| API instructions include **closing positions** (§1.7)                 | Could customers close/reduce positions?                                                          |
+| Affiliated trading arm supposedly gets **same access** (§6.3)         | Did the trading arm have better access during the outage?                                        |
+| BitMEX can **halt trading** (§1.12)                                   | Was that functionality technically available in March?                                           |
+| Force majeure limited to matters outside **reasonable control** (§14) | What was known after the February attack and what remediation occurred?                          |
+
+That table belongs in your report.
+
+## And it leads to one particularly important discovery request
+
+I would specifically request:
+
+> **All documents, communications, policies, procedures, runbooks, technical specifications, source-code change records, engineering tickets, incident reports and decision records in effect from February 1 through May 31, 2020 concerning (i) platform availability; (ii) maintenance of an orderly market; (iii) market suspension; (iv) liquidation suspension; (v) Cancel-Only mode; (vi) DDoS response; (vii) system overload; (viii) customer order cancellation and position-closing functionality during overload; and (ix) criteria governing the suspension and resumption of trading.**
+
+Then separately request:
+
+> **All documents showing when the May 19, 2020 Market Suspended / Cancel-Only and no-liquidation procedures were designed, developed, tested, approved or implemented, including documents identifying whether those procedures resulted from lessons learned during the March 12–13, 2020 incident.**
+
+That second request could be particularly important.
+
+If discovery shows **Cancel-Only/no-liquidation functionality already existed in March but wasn't activated**, that's one story.
+
+If it didn't exist until after March, but internal records show BitMEX immediately developed it because March exposed the danger, that's another story.
+
+If BitMEX considered suspension in March and affirmatively rejected it despite knowing customers could not access their positions, that's another.
+
+**We don't yet know which one is true—and that's exactly why these Terms give you a credible basis for seeking the discovery.**
+
+I would make **§1.12 ("responsibility to maintain an orderly market") + §7.3 ("reasonable efforts"/"commercially reasonable efforts") + BitMEX's March admission that users could barely reach the engine + the May 19 cancel-only/no-liquidation response** the four pillars of the argument.
+
+[1]: https://web.archive.org/web/20191228102626/https%3A//www.bitmex.com/app/terms "Terms of Service - BitMEX"
