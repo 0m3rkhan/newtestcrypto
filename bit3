@@ -1,0 +1,459 @@
+Yes. There are several additional angles that can make the request for discovery substantially stronger. I would add them, but distinguish between **actual rules binding BitMEX** and **industry standards showing what a reasonable electronic derivatives venue would have been expected to consider**.
+
+The goal at this stage is not necessarily to prove negligence conclusively. It is to show enough objective evidence that there is a legitimate question about **what BitMEX knew, what safeguards were available, why they were not used, and whether those decisions caused avoidable customer losses.**
+
+## 1. Use the concept of "availability," not merely "uptime"
+
+This is an important distinction.
+
+BitMEX may argue:
+
+> "The trading engine remained operational."
+
+But that does not necessarily mean the **trading service was meaningfully available to its customers**.
+
+For a leveraged derivatives platform, availability arguably means that customers can perform the critical actions necessary to control risk:
+
+**View position → add/change margin → cancel orders → amend orders → reduce position → close position.**
+
+If the matching engine works but customers cannot reliably perform those functions, then from the customer's perspective the trading service may not be effectively available.
+
+BitMEX itself recognized this concept in discussing overload. In a pre-March-2020 technology article, BitMEX explained that if orders spend too long waiting to reach the trading engine, the resulting price can become so stale that **"trading is effectively impossible."** BitMEX therefore limited queue depth and gave special treatment to certain risk-reducing requests. ([BitMEX][1])
+
+[BitMEX — Technology Scaling: The Road to 100x](https://www.bitmex.com/zh-hant/blog/bitmex-technology-scaling-part-2-the-road-to-100x?utm_source=chatgpt.com)
+
+That gives you useful language:
+
+> **The relevant question is not simply whether BitMEX's matching engine remained operational. The relevant question is whether customers retained effective access to the essential functions required to manage leveraged positions while BitMEX's automated risk and liquidation systems continued operating.**
+
+---
+
+# 2. BitMEX itself treated cancellations differently because they reduce risk
+
+This could be a very important piece of evidence.
+
+BitMEX's historical API changelog shows that by **January–February 2018**, BitMEX had implemented load-shedding when its systems became overloaded.
+
+But importantly:
+
+> **Order cancellations were exempt from load shedding.**
+
+And by February 26, 2018, BitMEX specifically stated that **Order Cancel and the "Close" instruction remained exempt from shedding.** 
+
+[BitMEX historical API changelog](https://www.bitmex.com/app/static/md/en-US/apiChangelog?utm_source=chatgpt.com)
+
+Think about what that demonstrates.
+
+Years before March 2020, BitMEX's engineers had apparently made a deliberate architectural decision:
+
+**When the system is under stress, opening/changing risk can be rejected—but customers should retain greater ability to cancel or close risk.**
+
+That supports a powerful argument:
+
+> **BitMEX itself recognized before March 2020 that cancellation and position-closing functions deserved special protection during system stress. Discovery is therefore appropriate to determine why those risk-reducing functions were unavailable or ineffective during the March 13 incident and whether alternative access or suspension controls should have been activated.**
+
+That's stronger than relying on what another exchange thought was appropriate.
+
+---
+
+# 3. Frame this as "asymmetric availability"
+
+I would actually give the problem a name in the report:
+
+## Asymmetric Platform Availability
+
+Explain it simply:
+
+> During the March 13 disruption, BitMEX stated that its trading engine remained operational while customers experienced delays or an inability to reach that engine. If BitMEX's Mark Price, margin and Liquidation Engine processes also continued operating, this may have created an asymmetric condition in which BitMEX could continue automatically managing or liquidating customer positions while affected customers could not reliably manage those same positions themselves.
+
+Then say:
+
+> Whether that condition actually existed for the claimant's XBTM20 position requires discovery of BitMEX's authentication, gateway, trading-engine, Mark Price and Liquidation Engine records.
+
+That gives you a logical reason for requesting the records.
+
+---
+
+# 4. "Ability to exit" should be treated as a fundamental risk control
+
+This is another useful industry-standard concept.
+
+FIA—the major derivatives-industry association—has developed electronic-trading risk-management guidance for years. Its historical materials emphasize that electronic markets require controls addressing system reliability, market access and automated trading risk. FIA's archive shows recommendations going back to **2010–2015**, well before this event. ([FIA][2])
+
+[FIA Electronic Trading guidance archive](https://www.fia.org/fia/articles/electronic-trading?utm_source=chatgpt.com)
+
+Don't argue:
+
+> "FIA required BitMEX to do X."
+
+Instead:
+
+> **Industry guidance existing well before March 2020 recognized that electronic trading creates operational risks requiring specific risk-management controls. BitMEX's own preferential treatment of cancellation and Close requests is consistent with the same principle—that market participants need a reliable means of reducing risk when automated trading infrastructure is stressed.**
+
+That is much more defensible.
+
+---
+
+# 5. IOSCO gives you a much stronger independent industry-standard source
+
+This is worth adding.
+
+In **April 2015**, IOSCO—the International Organization of Securities Commissions—published:
+
+**Mechanisms for Trading Venues to Effectively Manage Electronic Trading Risks and Plans for Business Continuity.**
+
+That's nearly five years before your incident. ([IOSCO][3])
+
+[IOSCO — Electronic Trading Risks and Business Continuity, April 2015](https://www.iosco.org/library/pubdocs/pdf/ioscopd483.pdf?utm_source=chatgpt.com)
+
+IOSCO's work specifically addressed:
+
+* electronic trading risks;
+* trading venue controls;
+* business continuity;
+* technological failures;
+* orderly operation of electronic markets.
+
+This is much better than relying exclusively on crypto exchanges because it demonstrates that these were **recognized trading-venue operational-risk issues long before March 2020**.
+
+Again, don't call IOSCO guidance a binding BitMEX rule.
+
+Use:
+
+> **By 2015, international securities regulators had already identified electronic-trading risk management and business-continuity planning as core responsibilities for trading venues. This provides relevant benchmark evidence for evaluating whether BitMEX's March 2020 incident-response procedures were consistent with recognized trading-venue operational practices.**
+
+---
+
+# 6. CFTC standards provide another benchmark
+
+This is also valuable, with the same caveat.
+
+CFTC system-safeguard rules applicable to registered U.S. designated contract markets required those venues to follow generally accepted standards and best practices concerning:
+
+**development, operation, reliability, security and capacity of automated systems.**
+
+They also required:
+
+**business continuity/disaster recovery plans, emergency procedures, backup facilities, incident-response testing and periodic testing of automated-system reliability and capacity.** ([Commodity Futures Trading Commission][4])
+
+[CFTC — System Safeguards Rules](https://www.cftc.gov/LawRegulation/FederalRegister/finalrules/2016-22174.html?utm_source=chatgpt.com)
+
+The CFTC also required exchanges to preserve things like:
+
+* business continuity plans;
+* emergency procedures;
+* operational-risk assessments;
+* system-safeguard testing;
+* incident-response plans.
+
+That's particularly useful because those categories closely resemble the **documents you want in discovery**. ([Commodity Futures Trading Commission][4])
+
+Your wording should be:
+
+> **These regulations are not cited as establishing that BitMEX was a registered U.S. designated contract market subject to these particular requirements. They demonstrate, however, the types of controls and records that established derivatives-market regulation regarded as fundamental to the safe operation of electronic trading venues before March 2020.**
+
+Then request the BitMEX equivalents.
+
+---
+
+# 7. That gives you a powerful "Where are BitMEX's equivalent controls?" argument
+
+This is how I would translate the regulatory standards into discovery.
+
+If mature electronic exchanges were expected to have:
+
+**Business Continuity Plan**
+
+**Incident Response Plan**
+
+**Emergency Trading Suspension Procedures**
+
+**System Capacity Testing**
+
+**Cybersecurity Testing**
+
+**Operational Risk Assessments**
+
+**Recovery/Restart Procedures**
+
+then ask:
+
+> **What were BitMEX's corresponding policies on March 12–13, 2020?**
+
+That's a very reasonable discovery request.
+
+You're not claiming BitMEX was legally obligated under a particular CFTC regulation.
+
+You're saying:
+
+> **These are standard categories of operational controls for electronic derivatives markets. We need to determine what equivalent controls BitMEX maintained and whether it followed them.**
+
+---
+
+# 8. The February 2020 attack makes "foreseeability" more important
+
+This remains one of your potentially strongest arguments.
+
+According to BitMEX's own March postmortem, the attackers had conducted a similar unsuccessful attack on **February 15, 2020**.
+
+That means discovery should determine:
+
+**What did BitMEX learn on February 15?**
+
+**Did BitMEX identify the vulnerability?**
+
+**Was a ticket created?**
+
+**Was it classified as critical?**
+
+**What remediation was recommended?**
+
+**Was remediation postponed?**
+
+**Who made that decision?**
+
+**Was another attack considered foreseeable?**
+
+**Was the vulnerability tested?**
+
+This can become much more damaging than the simple fact that an outage occurred.
+
+There's a major difference between:
+
+> "BitMEX was hit by an unforeseeable cyberattack."
+
+and:
+
+> "BitMEX had already experienced substantially similar attack activity approximately one month earlier but failed to implement reasonable remediation."
+
+You don't yet know which story the internal evidence supports.
+
+That's precisely why discovery is justified.
+
+---
+
+# 9. The Trollbox issue may support a failure-isolation argument
+
+There's another technical issue that can be explained simply.
+
+BitMEX attributed the March attack to specially crafted requests involving its **Trollbox/chat functionality** that caused database resource exhaustion.
+
+So the layman's question becomes:
+
+> **Why could a nonessential chat feature interfere with customers' ability to reach a financial trading system containing highly leveraged positions?**
+
+That's potentially compelling.
+
+In critical financial systems, you generally want **failure isolation**:
+
+> A failure in a nonessential feature should not unnecessarily disable a critical function.
+
+You don't need to prove the architecture was negligent yet.
+
+Ask for discovery concerning:
+
+* architecture diagrams;
+* dependency maps;
+* Trollbox database architecture;
+* authentication database architecture;
+* separation between trading and non-trading systems;
+* February vulnerability assessments;
+* database capacity tests;
+* remediation proposals.
+
+The expert can then determine whether BitMEX reasonably isolated critical systems.
+
+---
+
+# 10. Terms of Service could help—but we need the actual March 2020 version
+
+This is one area where I would **not rely on today's BitMEX Terms**.
+
+We need the Terms of Service and Risk Disclosure that applied specifically on **March 12–13, 2020**.
+
+That's important because they may cut **both ways**.
+
+BitMEX will likely rely on provisions addressing:
+
+* platform outages;
+* service availability;
+* high-risk derivatives;
+* liquidation;
+* technological failure;
+* limitation of liability;
+* force majeure;
+* customer responsibility.
+
+But you should examine whether the same agreement also described what BitMEX undertook to provide—such as the ability to:
+
+**place orders, close positions, use margin or interact with the trading platform.**
+
+Interestingly, later litigation involving BitMEX addressed allegations that BitMEX breached its Terms by failing to provide customers the ability to **"place orders, open and close positions and use margin."** The court did not ultimately accept the plaintiffs' negligence theory as pleaded, emphasizing problems including duty and causation, but the case is useful as a warning about how the claim needs to be structured. ([Justia Law][5])
+
+[BMA LLC v. HDR Global Trading Ltd. — federal court decision](https://law.justia.com/cases/federal/district-courts/california/candce/3%3A2020cv03345/359624/186/?utm_source=chatgpt.com)
+
+This case is important for you because it tells us what **not** to do.
+
+A court already rejected a broad theory that BitMEX simply owed traders a general tort duty to maintain a functional marketplace, finding problems with establishing an independent duty and causation. ([Justia Law][5])
+
+So your argument needs to be more specific.
+
+---
+
+# 11. Separate breach of contract from negligence
+
+This could materially improve the legal theory.
+
+Instead of one broad allegation:
+
+> "BitMEX negligently failed to provide a functioning exchange."
+
+consider three separate questions for counsel:
+
+### Contract
+
+What did the March 2020 Terms actually promise concerning access, trading functionality, liquidation and platform availability?
+
+### Negligence / operational conduct
+
+Once BitMEX knew customers were materially unable to reach their leveraged positions, did it reasonably respond to that condition?
+
+### Causation
+
+Can this particular trader demonstrate that he attempted—or had a realistic opportunity—to take a specific action that would have avoided or reduced liquidation?
+
+That last piece is especially important because the federal BitMEX litigation shows that courts may be skeptical of generalized economic-loss negligence theories. ([Justia Law][5])
+
+---
+
+# 12. Terms disclaiming uptime don't necessarily end the investigation
+
+Suppose the historical Terms say something like:
+
+> BitMEX does not guarantee uninterrupted availability.
+
+That obviously helps BitMEX.
+
+But there is still an important distinction between:
+
+**A. BitMEX guaranteeing that outages will never happen**
+
+and
+
+**B. what BitMEX reasonably did once it knew an outage was happening.**
+
+Your claim should focus much more heavily on **B**.
+
+You don't necessarily need to prove:
+
+> BitMEX had a duty to maintain 100% uptime.
+
+Instead:
+
+> **Once BitMEX knew customers were unable to reliably manage leveraged positions, what procedures governed the decision whether to continue trading and liquidations, suspend the market, allow cancellation, or otherwise protect customers until access was restored?**
+
+That's a much harder question for an uptime disclaimer alone to answer.
+
+---
+
+# 13. Ask whether BitMEX had an SLA or internal availability target
+
+This could be extremely interesting discovery.
+
+Even if BitMEX gave customers **no contractual uptime guarantee**, internally it may have maintained:
+
+* uptime targets;
+* availability SLAs;
+* latency thresholds;
+* maximum acceptable order delay;
+* API availability targets;
+* authentication availability targets;
+* recovery-time objectives;
+* recovery-point objectives;
+* severity classifications;
+* incident escalation thresholds.
+
+If BitMEX's internal standard said, for example:
+
+> **Critical trading functionality must have 99.99% availability**
+
+or
+
+> **SEV-1 incident requires market suspension**
+
+that could be much more useful than a generic external industry standard.
+
+Ask for those records.
+
+---
+
+# 14. BitMEX's own queue policy may establish an internal latency standard
+
+This is particularly interesting.
+
+Before March 2020, BitMEX publicly explained that it controlled its trading-engine queue specifically because excessive latency could make a price stale by the time the order executed.
+
+BitMEX said it tuned the queue to cap worst-case latency around **3–5 seconds**. ([BitMEX][1])
+
+That means BitMEX itself recognized:
+
+> **There is a point at which delayed access becomes unacceptable for trading.**
+
+Now compare that with March.
+
+If customer requests were being delayed by minutes—or unable to reach the engine at all—the issue wasn't simply "some latency."
+
+It was potentially far outside the operating condition BitMEX itself had publicly described as acceptable.
+
+That deserves discovery.
+
+---
+
+# 15. Build a "reasonable exchange" benchmark
+
+You now have enough evidence to create a very understandable benchmark.
+
+By March 2020, a reasonably controlled electronic leveraged trading venue could potentially be expected to consider:
+
+1. **Reliable ability to reduce risk** — especially cancel and close functions.
+2. **Emergency market suspension** when fair/effective access materially fails.
+3. **Protection against liquidation during platform-imposed inability to act.**
+4. **Controlled reopening** rather than instantly restarting unrestricted trading.
+5. **Cancel-only period** allowing customers to regain control.
+6. **Advance notice of trading resumption.**
+7. **Circuit breakers / volatility controls** during extreme disorder.
+8. **Business continuity and incident-response procedures.**
+9. **Capacity and stress testing.**
+10. **Failure isolation** so noncritical components cannot unnecessarily disable critical trading access.
+11. **Post-incident investigation and remediation.**
+12. **Customer remediation where an exchange-system failure demonstrably caused an improper outcome.**
+
+Not every exchange had every control. And I would **not call this a binding "industry standard" yet**.
+
+Call it:
+
+> **Evidence of contemporaneous industry practices and recognized electronic-trading risk controls.**
+
+That's much safer and actually more persuasive.
+
+---
+
+# The argument I would ultimately make for discovery
+
+I think your strongest concise version is this:
+
+> **The evidence presently available raises a substantial question whether BitMEX maintained an appropriate balance between its automated liquidation mechanisms and its customers' ability to manage risk during the March 13, 2020 disruption. Long before that event, BitMEX itself had designed its overload controls to preserve cancellation and position-closing functionality, recognizing the importance of allowing customers to reduce risk during system stress. Other cryptocurrency venues had used liquidation pauses, controlled reopening periods, order cancellations and customer remediation following technology failures. International and regulated derivatives-market standards likewise recognized business continuity, system resiliency, incident response, capacity management and orderly recovery as fundamental electronic-trading controls.**
+>
+> **Against that background, BitMEX's acknowledgment that customers could find it nearly impossible to reach the trading engine while the trading engine itself remained operational warrants further investigation into whether BitMEX's Mark Price and Liquidation Engine continued operating against customer positions during periods in which those customers lacked effective access to manage their risk.**
+>
+> **The investigation should therefore determine what emergency controls BitMEX possessed, what its internal policies required, whether market suspension or liquidation suspension was considered, why those protections were or were not activated, what BitMEX learned from the similar February 2020 attack, and whether the cancel-only/no-liquidation procedures used during the May 19, 2020 outage existed or were being developed before or as a consequence of the March incident.**
+
+That's a **discovery argument**, rather than prematurely claiming the evidence already proves negligence.
+
+And I would make obtaining the **March 12–13, 2020 BitMEX Terms of Service, Risk Disclosure, API terms, system-overload policy, internal SLA/availability standards, Business Continuity Plan, Incident Response Plan, and market-suspension procedures** the next priority. Those documents could tell you whether this remains primarily an industry-practice argument or becomes a much stronger **BitMEX violated its own stated/internal standards** argument.
+
+[1]: https://www.bitmex.com/zh-hant/blog/bitmex-technology-scaling-part-2-the-road-to-100x?utm_source=chatgpt.com "BitMEX Technology Scaling, Part 2: The Road to 100x BitMEX部落格"
+[2]: https://www.fia.org/fia/articles/electronic-trading?utm_source=chatgpt.com "Electronic Trading | FIA"
+[3]: https://www.iosco.org/library/pubdocs/pdf/ioscopd483.pdf?utm_source=chatgpt.com "Mechanisms for Trading Venues to Effectively Manage Electronic Trading Risks and Plans for Business Continuity"
+[4]: https://www.cftc.gov/LawRegulation/FederalRegister/finalrules/2016-22174.html?utm_source=chatgpt.com "2016-22174 | CFTC"
+[5]: https://law.justia.com/cases/federal/district-courts/california/candce/3%3A2020cv03345/359624/186/?utm_source=chatgpt.com "BMA LLC v. HDR Global Trading Limited et al, 3:2020cv03345 - Document 186 (N.D. Cal. 2021) :: Justia"
