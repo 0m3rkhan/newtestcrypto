@@ -1,0 +1,542 @@
+
+Comprehensive Meeting Notes & Key Takeaways
+
+November 6, 2026 | Casino BSA/AML Audit, Internal Planning & DLA/OKX Project
+
+1. Executive summary
+
+The meeting covered three distinct discussions:
+
+* Casino BSA/AML audit: A significant OFAC screening failure, outstanding documentation requests, control improvements, regulatory oversight, staffing constraints, and audit planning.
+* Internal audit team debrief: Agreement on how to reconcile outstanding materials, develop the audit report, identify interview candidates, and schedule fieldwork.
+* DLA/OKX engagement: An unexpected conflict-of-interest challenge that has temporarily interrupted a separate cryptocurrency investigation.
+
+The 8 most important takeaways
+
+1. Significant OFAC control failure
+
+A patron reportedly identified as a 100% sanctions match was nevertheless approved for payment. A voluntary disclosure was submitted to OFAC, and the matter remains unresolved.
+
+2. Document the failure and the corrective response
+
+The report must establish what procedures were in place, where controls broke down, what remedial action followed, and which regulatory and operational risks remain.
+
+3. Important AML monitoring gaps remain
+
+Automated transaction monitoring is not yet implemented. The Connective 5 system remains in procurement, while certain monitoring activities rely on manual processes.
+
+4. Staffing is becoming a substantial risk
+
+The audit team lost Robert on September 11 without a replacement. The casino is preparing a major expansion, potentially increasing transaction volume without proportionate compliance resources.
+
+5. Regulatory approvals and surveillance access are bottlenecks
+
+Management reported lengthy delays receiving feedback from the Gaming Commission and difficulty obtaining surveillance records needed for compliance reviews.
+
+6. The audit team needs to reconcile the evidence immediately
+
+Several documents were reportedly submitted but cannot currently be located. The team agreed to reconcile the tracker, identify gaps, and send a focused follow-up to Rebecca.
+
+7. Do not rush audit completion
+
+Interview scheduling and closeout should follow the evidence review. The December 15 casino expansion is a major operational constraint, and management emphasized quality over an artificial deadline.
+
+8. The DLA/OKX project is paused over a disputed conflict concern
+
+OKX reportedly challenged the team’s prior exposure to confidential data. The team believes the prior and current datasets are distinct, but the project’s continuation is uncertain.
+
+2. Casino BSA/AML audit — detailed findings
+
+A. OFAC screening and prohibited-payment incident
+
+This was arguably the most significant regulatory issue discussed.
+
+What happened, according to management:
+
+* A frontline cage cashier conducted an OFAC screening on a patron.
+* The screening reportedly returned a 100% match against a sanctions list.
+* Despite that result, a supervisor approved the transaction and the patron was paid.
+* Robert, an auditor, identified the issue during a review in September.
+* The audit department conducted additional verification and concluded that the patron matched a sanctioned individual.
+* The casino submitted a voluntary disclosure to OFAC.
+* No substantive regulatory response had been received at the time of the meeting.
+
+Actions management said it took:
+
+* The supervisor involved was terminated.
+* The cashier received retraining, including specialized compliance training.
+* The cashier was placed on a last-chance agreement.
+* Additional OFAC training is planned for all cage supervisors and cashiers.
+* The OFAC operating procedures are being revised.
+
+Important audit considerations:
+
+This should not be treated solely as an employee error. The report should examine whether the problem also demonstrates weaknesses in supervisory controls, escalation, training effectiveness, sanctions screening procedures, and the ability to prevent payment after a confirmed match.
+
+Specifically, determine whether an effective system-based block should have prevented payment regardless of supervisor approval.
+
+The incident is still open. Possible regulatory consequences, including sanctions or additional monitoring, are unknown.
+
+Transcript clarification: The audio transcription uses inconsistent terms such as “VSC,” “BSC,” “SPM,” and “FBM.” Confirm the actual screening result, sanctions-list designation, and filing type against the underlying records before using those terms in the formal report.
+
+B. What the audit report must capture
+
+The audit team explicitly agreed to establish a baseline before incorporating the incident and subsequent corrective measures.
+
+Recommended report structure for the OFAC incident
+
+1. Controls in effect at the time
+
+Policies, screening workflow, supervisor approval, escalation requirements
+
+2. Incident and control breakdown
+
+Actual screening, match determination, approval, payment, and discovery chronology
+
+3. Containment and disclosure
+
+Escalation, voluntary disclosure, regulatory correspondence, immediate actions
+
+4. Corrective action and validation
+
+Disciplinary measures, revised procedures, retraining, control testing, effectiveness evidence
+
+The client agreed to supply an incident folder organized by case number, containing supporting emails, disclosure documentation, acknowledgments, and other case records.
+
+Critical point: Do not conclude that the remediation is effective simply because training was delivered or procedures were rewritten. Effectiveness should be established through implementation evidence and follow-up testing.
+
+C. Transaction monitoring and red flags
+
+Management explained that the casino does not yet have the automated transaction monitoring system originally envisioned.
+
+The Connective 5 implementation remains outstanding because procurement must follow government requirements, including a formal RFP and competitive bidding process.
+
+For the current audit:
+
+* Management will provide the existing inventory of AML red flags and triggering criteria.
+* The audit team will review that inventory and determine which additional documentation and transaction samples are needed.
+* Management stated that the red-flag listing has not yet been fully incorporated into the formal AML policy.
+* Automated alert generation is not currently available through the proposed system.
+
+Audit implication: The absence of automated monitoring does not establish that the existing manual process is ineffective, but it means the team must understand how transactions are identified, evaluated, escalated, documented, and monitored through closure.
+
+D. MTL sampling and testing
+
+An important clarification was made regarding the MTL process.
+
+Management stated that the formal sampling process began in August and was introduced to address a previously identified control gap.
+
+The process now reportedly uses a randomization tool to select 10% of daily MTL-level transactions for review.
+
+The audit team initially questioned whether an earlier process operated from January through July. Management clarified that the new review control did not exist before August.
+
+This creates several questions:
+
+* What compensating controls operated before August?
+* How was the 10% sample size determined?
+* Is the population complete and the sample genuinely random?
+* Are exceptions documented, escalated, and resolved?
+* Is a 10% sample reasonable given transaction volumes and risk?
+
+The report should distinguish between the period before and after the control became operational.
+
+E. AML risk assessment modernization
+
+Management stated that the 2025 AML risk assessment and methodology were provided previously, with the methodology maintained in a separate Excel tab.
+
+The casino has now onboarded Arctic Intelligence to replace the spreadsheet-based approach.
+
+The following was established:
+
+* The existing Excel-based assessment will be the baseline for historical review.
+* Management recognizes limitations in the existing methodology and reporting format.
+* The new system is expected to support a more structured assessment.
+* A new assessment output is expected by December 15.
+* The auditors agreed that they could also examine the new output once available.
+
+Important distinction: System acquisition is progress toward remediation, but it does not by itself demonstrate improved risk-assessment quality. The audit should examine methodology, risk weighting, control effectiveness, and remediation tracking.
+
+F. Governance, board involvement, and legal responsibilities
+
+The casino explained that the AML risk assessment is approved by the General Manager rather than the Board.
+
+The Board reportedly exercises more authority over cost approvals, and management suggested that the audit team could recommend additional Board involvement if appropriate.
+
+Other governance points included:
+
+* The current AML program was provided on October 8 and reportedly has not been revised.
+* Evidence of Board approval of the AML program needs to be resent.
+* Updated organizational charts have been provided.
+* General Counsel’s office is responsible for the Code of Conduct and related legal policies.
+* Management suggested that General Counsel issue a formal directive requiring departments to cooperate with compliance requests and authorized audit information requests.
+
+Audit implication: Confirm the organization’s formal delegation of BSA/AML responsibilities rather than assuming that governance expectations for a conventional bank translate identically to this casino’s structure.
+
+G. Surveillance and information-sharing restrictions
+
+The client reported recurring difficulties obtaining surveillance records.
+
+Management explained that:
+
+* Surveillance retains certain logs concerning law-enforcement requests and procedural violations.
+* These logs are needed to reconcile information against compliance records.
+* The auditors are requesting logs, not necessarily video footage.
+* Earlier communication with the Gaming Commission may have inaccurately framed the request.
+* Management believes the applicable New York gaming internal-control requirements support maintaining these logs.
+
+Management recommended that the audit team speak with the new surveillance director, Eric, and the on-site Gaming Commission representative, Bobby Kumar.
+
+The team should validate the precise legal, regulatory, confidentiality, and access requirements. Management’s interpretation should not automatically be adopted as a legal conclusion.
+
+H. Staffing and operational expansion
+
+This is an important cross-cutting risk that may justify attention in the executive summary of the audit report.
+
+The discussion established that:
+
+* Robert departed on September 11 and had not been replaced.
+* Existing audit/compliance personnel are absorbing additional responsibilities.
+* The new facility is expected to open around December 15.
+* Management discussed approximately 1,000 additional gaming machines, although another statement referenced 2,000 new machines involved in validation.
+* CTR volumes, monitoring requirements, investigations, and training demands are expected to rise.
+* The proposed system implementations and additional headcount have not fully materialized.
+* Key personnel are currently working extended hours supporting the expansion.
+
+Key audit consideration: Evaluate whether the compliance function has sufficient staffing, systems, and oversight capacity to support the expanded gaming operations.
+
+The machine counts should be confirmed, as the transcript contains differing figures.
+
+3. Documentation requested — status and next steps
+
+The client and auditors went through the document request list in detail. Below is a consolidated tracker based on what was stated during the call.
+
+“Received” means participants verbally acknowledged receipt. Items described as “sent” may still require reconciliation against the audit repository.
+
+Document or evidence	Status from meeting	Next step
+Current organizational chart and key personnel	Sent Nov. 6	Identify interviewees
+2025 AML risk assessment and GM approval	Reportedly received	Review methodology
+Risk assessment methodology	Included in Excel	Review existing and new approach
+Arctic Intelligence documentation	Outstanding	Rebecca to send
+Current AML program	Received Oct. 8	Baseline review
+Board AML program approval evidence	Needs resending	Rebecca to resend
+AML policies and operating procedures	Previously sent Oct. 21, not located	Resend and reconcile
+Cage OFAC procedures	Additional document needed	Client to provide
+CTR filing submissions for selected patrons	Outstanding	Provide actual submitted PDFs
+MTL logs	Submitted on the 14th	Test new sampling process
+SAR and non-SAR investigation logs	Sent Nov. 5	Review completeness
+Transaction monitoring red-flag criteria	Partially available	Client to send current criteria
+Connective 5 implementation	Open remediation item	Document procurement status
+CTR alerts and escalation documentation	Received	Sample testing
+2025 CTR review logs	Received Oct. 17	Further testing
+Biannual EDD review and risk ratings	Received	Assess completeness
+Employee AML training matrix	Reportedly received	Review coverage
+AML training course access	Provided	Complete training review
+Compliance personnel resume/job description	Sent	Review qualifications
+Code of Conduct and ethics policies	Legal responsible; updates pending	Interview legal
+Compliance subpoena log	Sent Nov. 6	Review
+Surveillance logs and procedural violations	Access unresolved	Interview stakeholders
+Compliance violation notice	Sent; one reported for review period	Review exception
+Updated OFAC procedures	In progress	New draft due Nov. 13
+SAR committee charter	Sent Nov. 6	Review
+OFAC incident file and disclosure	Outstanding	Obtain complete case package
+Outstanding audit remediation memo	To be prepared	Management to document
+Monthly OFAC screening logs	Uploaded Nov. 5	Auditor to review
+GM/Gaming Commission AML procedure approvals	Reportedly supplied	Reconcile versions
+Transaction monitoring policy documentation	Incomplete	Assess and document gap
+2025 OFAC positive-match escalations	None reported	Verify applicable period
+Board compliance committee AML minutes	Not applicable per management’s governance model	Assess governance expectations
+
+Specific sampling decisions
+
+The team agreed that the CTR sample request should be satisfied by submitting the actual filed CTR PDF from the casino’s compliance system for each selected patron.
+
+The auditors do not need the entire daily audit packet when the individual filing is sufficient.
+
+Selected patrons were identified because of their transaction activity volume and repetition. The methodology is intended to test consistency of detection, reporting, and documentation.
+
+Additional samples were discussed for SARs, CDD, and CTR-related reviews. One speaker mentioned “true logs,” which should be confirmed against the request tracker.
+
+4. Decisions and action items
+
+These are the operational commitments worth carrying forward into your project tracker.
+
+Action tracker
+
+0 of 13 marked complete
+
+Copy
+
+Reconcile all received documents against the outstanding request tracker, including the October 21 ZIP file.
+
+Audit team·Nov. 6–9
+
+Send Rebecca a consolidated confirmation of documents received and remaining gaps.
+
+Audit team·Nov. 6–9
+
+Identify interview candidates from the organization chart and distribute proposed interview list.
+
+Audit lead·Target Nov. 6; no later than Nov. 9–10
+
+Begin drafting the baseline BSA/AML report, including a separate section for the OFAC incident.
+
+Audit team·Week of Nov. 9
+
+Resend historical operating procedures, Board approval evidence and Arctic Intelligence materials.
+
+Rebecca / client·As soon as practical
+
+Supply actual CTR filing PDFs for the selected patrons.
+
+Rebecca / client·Nov. 7 or early following week
+
+Issue remaining sample selections for SAR, CDD and CTR-related processes.
+
+Audit team·Target Nov. 6
+
+Provide updated operating procedures, including revised OFAC controls.
+
+Client compliance·Friday, Nov. 13
+
+Supply the complete OFAC incident case package, disclosure correspondence and corrective actions.
+
+Client compliance·Not finalized
+
+Provide red-flag criteria, remaining remediation status and implementation details.
+
+Client compliance·Not finalized
+
+Coordinate interviews with legal, surveillance, Gaming Commission and operational stakeholders.
+
+Client management·Following interview request
+
+Reassess audit closeout dates after interview availability is confirmed.
+
+Audit team / client·Week of Nov. 9
+
+Provide new risk assessment output using Arctic Intelligence.
+
+Client compliance·Expected Dec. 15
+
+Dates are derived from the November 6 meeting and are targets, not confirmations that work was completed. Some commitments were described as “tomorrow” or “early next week,” and November 7 falls on a Saturday.
+
+5. Interview candidates and objectives
+
+The audit team agreed to use the current organization chart to establish the interview list and allow the client adequate scheduling lead time.
+
+Candidate	Why the interview matters
+Eric — new Surveillance Director	Surveillance logs, access restrictions, exception escalation, record retention and operational oversight
+Bobby Kumar — on-site Gaming Commission representative	Regulatory approvals, surveillance record access and coordination with compliance
+Tom McNally — Legal	Code of Conduct, information-sharing rules, subpoena handling and governance
+Cage operations leadership	OFAC screening breakdown, supervisory overrides, revised controls and retraining
+Compliance leadership / Rebecca	Monitoring processes, evidence, remediation plans, staffing and system constraints
+General Manager or relevant executive	Risk assessment approvals, resource allocation, remediation priorities and expansion readiness
+
+The new surveillance director reportedly lacks a casino-industry background but was described as capable and knowledgeable. That makes the interview particularly important for understanding whether responsibilities and regulatory expectations are clearly established.
+
+The group discussed approximately four or five interviews, potentially conducted in 30-minute sessions. The final number and format were not settled.
+
+Interview questions I would prioritize
+
+* Who had the authority to override a sanctions match, and what prevented or allowed that approval?
+* What independent control now prevents the same incident from recurring?
+* How are transaction monitoring alerts generated and investigated without the intended automated system?
+* What changed in August with the MTL sampling process, and what controls existed beforehand?
+* Why have surveillance records historically been unavailable to compliance and external auditors?
+* What formal processes govern approval and implementation of revised AML procedures?
+* How will the compliance function manage increased workload after the expansion?
+* Who owns each outstanding audit finding, and what evidence demonstrates actual remediation?
+
+6. Regulatory and compliance issues to pay special attention to
+
+These are the matters that could become meaningful findings depending on the evidence.
+
+High
+
+OFAC breakdown and effectiveness of corrective controls
+
+The strongest potential finding. Determine whether the incident was isolated, whether the screening result was truly a confirmed match, and whether the override mechanism remains vulnerable.
+
+High
+
+Capacity and compliance resourcing
+
+The unfilled vacancy, planned gaming expansion, rising transaction volume, and system delays could collectively weaken oversight.
+
+High
+
+Transaction monitoring effectiveness
+
+The team must establish whether the existing manual controls can reliably identify suspicious activity and support timely review and SAR decisions.
+
+Moderate
+
+MTL control gap before August
+
+The new sampling process may be a positive remediation, but the earlier period requires assessment to determine what risks went unaddressed.
+
+Moderate
+
+Information-sharing and surveillance access
+
+Lack of cooperation or unclear disclosure procedures may impair the compliance function’s ability to investigate potential misconduct and support audit testing.
+
+Moderate
+
+Governance and policy implementation delays
+
+Investigate how the casino manages compliance with federal obligations while revised procedures are awaiting state regulatory review or approval.
+
+These are preliminary audit risk ratings for prioritization, not confirmed findings or regulatory determinations.
+
+A separate issue raised was Section 314(b) information sharing. Management is considering seeking Board support for participation in 2027. That should be tracked separately from the internal information-sharing dispute with surveillance, which is a different topic.
+
+7. Internal team debrief — what was decided after the client left
+
+The internal discussion focused on moving forward with the audit efficiently while avoiding unnecessary pressure on the client during the casino expansion.
+
+Workplan agreed by the team
+
+Document reconciliation: One team member will compare the outstanding document tracker against the materials in the shared folders, including the ZIP file reportedly sent on October 21. The purpose is to avoid repeatedly requesting documents already delivered.
+
+Interview planning: The audit lead will prepare an interview wish list using the newly supplied organizational chart. The team would prefer to send it as soon as possible, potentially November 6, rather than waiting until the following week.
+
+Report development: Starting the week of November 9, the team intends to build the report framework and draft the baseline control assessment. The OFAC case and other recent changes will be incorporated after supporting evidence has been reviewed.
+
+Testing samples: CDD and SAR samples can be requested promptly because those processes follow a familiar annual approach. The team wants additional consideration of the CTR review samples because management has changed elements of the underlying process.
+
+Internal checkpoint: A follow-up discussion was proposed for approximately 3:00 p.m. on November 6 to align on the document reconciliation and interview list.
+
+Scheduling and closeout
+
+Two possible approaches were discussed:
+
+* Complete a concentrated round of interviews during the week of November 16, assuming client personnel are available.
+* Consider interviews or fieldwork shortly after the December 15 expansion, potentially December 16–18, recognizing that operational demands may continue after opening.
+
+No date was finalized. The client explicitly requested that the audit be completed properly rather than rushed.
+
+The internal team also discussed individual December absences and scheduling around the holidays.
+
+Your main takeaway: Get the documentation reviewed and the interview requests issued now. Keep closeout flexible until interview availability, remaining evidence, and any significant findings are understood.
+
+8. Separate DLA/OKX project discussion
+
+The final part of the transcript concerns a separate cryptocurrency-related engagement involving DLA and OKX. It should remain separate from the casino audit notes.
+
+What reportedly happened
+
+A team member explained that they had worked on a prior OKX-related engagement approximately two to three years earlier, involving OKB and certain unidentified market-maker accounts.
+
+That prior engagement involved access to transaction data and user IDs.
+
+The current investigation reportedly involves a different cryptocurrency and different user IDs.
+
+According to the internal discussion, OKX recognized the names of individuals involved in the prior engagement and raised a concern that they might possess confidential information providing an unfair advantage in the current matter.
+
+The team stated that:
+
+* The prior and current projects involved different datasets and user IDs.
+* The underlying customer identities from the previous project were not known.
+* Potential conflicts had been disclosed during the team’s own screening process.
+* The individuals were working in different capacities and organizational arrangements across the engagements.
+* OKX nevertheless challenged the team’s continued involvement.
+
+The conversation also described a reported threat of public criticism on LinkedIn if the engagement continued.
+
+Following the challenge, the project was reportedly paused.
+
+What remains uncertain
+
+Importantly, this information came through an intermediary rather than direct confirmation from DLA.
+
+The team did not know whether the engagement was formally terminated, temporarily suspended, or awaiting a legal or contractual determination.
+
+The report deadline was discussed as the ninth, apparently November 9, but that should be confirmed.
+
+Implications and next steps
+
+Issue	Important consideration
+Prior confidential information	Document exactly what data was accessed, by whom, and under which confidentiality obligations
+Overlap between engagements	Validate statements that datasets, assets, and user IDs are different
+Conflict screening	Preserve evidence of disclosures, checks, approvals, and engagement acceptance
+Contractual position	Have counsel examine confidentiality obligations, conflicts and potential remedies
+Project continuation	Obtain direct written clarification from DLA or the authorized engagement lead
+Deadline	Confirm whether the report deadline is extended and what deliverables are currently paused
+Communications	Ensure external or public communications are coordinated through authorized legal and engagement personnel
+
+The team speculated that DLA could challenge the objection and potentially revive the engagement. However, that remains only a possibility.
+
+Although litigation or other remedies were mentioned conversationally, there was no established legal conclusion that the objection was improper or that the team would have grounds to sue.
+
+A team member also indicated they were stepping back from publicly identified involvement while remaining available for behind-the-scenes support.
+
+Key takeaway: Protect the prior confidentiality obligations, document the scope of actual overlap, and avoid restarting substantive project work until the engagement’s authorized decision-makers resolve the conflict question.
+
+9. My recommended priorities for you
+
+Considering the casino audit and the associated delivery responsibilities, I would organize your immediate efforts into three priorities.
+
+01
+
+Establish the report’s defensible baseline
+
+Review the AML program, historical procedures, risk assessment, monitoring methods, and earlier recommendations. Separate control design from implementation and operating effectiveness.
+
+02
+
+Develop the OFAC incident assessment
+
+Construct an exact chronology, determine root causes, examine the disclosure and regulator correspondence, and test whether remediation addresses the underlying control failure.
+
+03
+
+Evaluate whether the compliance program can support expansion
+
+Assess staffing, transactional volume, surveillance cooperation, delayed procurement, unresolved findings and escalation channels as a connected operating risk.
+
+Additional points I would not overlook
+
+There are a few issues that received relatively little attention during the call but deserve more scrutiny.
+
+First, determine whether the OFAC incident requires more than a procedural finding. It may reveal shortcomings across the three lines of defense: frontline handling, supervisory oversight, and independent monitoring.
+
+Second, look for recurring themes across previous audits. The client referenced prior findings and continued delays with systems and surveillance. A recommendation repeated over several years without effective closure can be more significant than a newly identified weakness.
+
+Third, distinguish regulatory delays from management accountability. Even if approvals and procurement are delayed, the audit should establish what interim controls management implemented.
+
+Fourth, consider a targeted expansion-readiness assessment. The new gaming floor, additional machines, and growing transaction activity create a natural reason to review whether the existing AML program remains appropriately designed and adequately resourced.
+
+Fifth, preserve a consistent audit cutoff date. Historical 2025 evidence, the September 2026 OFAC incident, newly implemented controls, and December 2026 planned improvements should be clearly distinguished. Otherwise, the report may inadvertently treat future remediation commitments as completed controls.
+
+10. Condensed notes you can share with your audit team
+
+BSA/AML Audit — Meeting Recap and Immediate Next Steps
+
+The client provided updates on the outstanding documentation requests, recent OFAC incident, control enhancements, open remediation items, and operational challenges associated with the December 15 expansion.
+
+Key takeaways
+
+1. OFAC incident: A patron reportedly received payment following a 100% sanctions screening match and supervisory approval. The client subsequently made a voluntary disclosure to OFAC. The supervisor was terminated, the cashier was retrained and placed on a last-chance agreement, and broader retraining is planned. Regulatory disposition remains pending.
+2. Documentation: Several items previously sent were not located in our repository, including operating procedures. We need to reconcile all submissions and issue one consolidated gap list to Rebecca.
+3. OFAC assessment: Obtain historical procedures, the complete incident case file, disclosure correspondence, revised procedures, training records, and evidence of corrective-action effectiveness.
+4. Transaction monitoring: Connective 5 remains an open remediation item due to procurement delays. The client will provide current red flags and associated detection criteria.
+5. MTL reviews: The formal 10% random sampling process began in August. We need to assess the earlier control environment and test the new process.
+6. Risk assessment: The client has recently onboarded Arctic Intelligence. We will review the historical Excel methodology and consider the new December 15 assessment output.
+7. Surveillance and governance: Interview the new Surveillance Director, Gaming Commission representative, and Legal to clarify log access, information-sharing requirements, and governance responsibilities.
+8. Resourcing: The loss of an auditor and the pending gaming expansion create additional compliance capacity concerns that warrant assessment.
+9. Interviews: Prepare the proposed interview list using the organizational chart and provide the client sufficient scheduling notice.
+10. Audit timeline: Do not prematurely fix a closeout date. Reassess once documentation, interviews, and any significant findings are better understood.
+
+Immediate internal priorities
+
+* Reconcile the document tracker and outstanding evidence.
+* Send Rebecca a consolidated list of missing items.
+* Distribute SAR/CDD and other planned testing requests.
+* Prepare the stakeholder interview list.
+* Start drafting the report baseline and OFAC incident section.
+* Determine an achievable interview and closeout schedule.
+
+Overall objective: Complete a defensible, evidence-based BSA/AML assessment that clearly distinguishes the existing control environment, identified weaknesses, management’s corrective actions, and remaining regulatory or operational exposure.
+
+The central theme of this meeting is that the casino is making control improvements, but the OFAC incident, staffing pressures, delayed technology implementation, and continuing governance challenges need to be evaluated together. The most valuable outcome of your audit will be showing not only whether individual procedures exist, but whether the overall AML compliance program is functioning effectively as the casino expands.
