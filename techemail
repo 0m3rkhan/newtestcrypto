@@ -1,26 +1,44 @@
-I’ve been thinking about the discussion around ADM access, database and storage connectivity, and the friction the current model is creating for the team.
+At a high level, I’d suggest we move toward a zone-based operating model that separates:
 
-I don’t think the right answer is to weaken the security requirements or eliminate the separation between standard and privileged access. Instead, I think there is an opportunity to redesign the way we work around those controls so the security model remains intact while the delivery experience becomes much more efficient.
+Innovation and lower-risk development activity
 
-At a high level, I’d suggest we separate our recurring activities into three categories:
+Day-to-day client delivery and analytical work
 
-Normal day-to-day client and analytical work
+Privileged administrative and highly sensitive activity
 
-Privileged administrative activity
+Each zone would have a defined identity, access model, tooling, and security posture. The objective would be to keep routine engagement work—such as querying approved client datasets, accessing scoped storage, running analysis, and using approved development tools—within a controlled project workspace using the practitioner’s normal identity, while reserving ADM/PIM access for true administrative functions such as provisioning resources, modifying infrastructure, changing security configuration, or assigning privileged access.
 
-Automated or system-driven activity
+I also think we can make the model more scalable by standardizing how each engagement is provisioned.
 
-From there, we can define which identity, permissions, and working environment should be used for each type of activity.
+Rather than treating access as a series of individual requests, an engagement could be established with a defined project access package that brings together the appropriate project group, approved data resources, analytical environment, repositories, and tooling for that matter. Membership could then be managed at the project level and expire when the engagement ends.
 
-The goal would be to keep routine work such as querying approved client datasets, accessing scoped storage, running analysis, and using approved development tools within a normal project workspace, while reserving ADM/PIM access for true administrative functions such as provisioning resources, changing permissions, modifying infrastructure, or managing security configuration.
+Alongside the human identities, we should also consider workload identities for automated processes, pipelines, and eventually AI or digital-worker activity so system-to-system processing does not need to run under an individual practitioner’s credentials.
 
-I also think there is an opportunity to introduce more project-specific access and potentially provisioned workspaces so teams are not constantly switching identities, browser profiles, and authentication contexts simply to perform routine engagement work.
+The result would be a model where:
 
-This would allow us to preserve the hard security boundaries while reducing the operational friction that is beginning to affect delivery.
+Regular identities are used for normal client delivery
 
-Rather than try to solve this one authentication issue at a time, I’d be happy to help map a representative engagement end to end and identify where we can separate normal data-plane activity from control-plane administration, where project-level access can be standardized, and where automation or dedicated workload identities could remove unnecessary manual steps.
+Privileged identities are reserved for administration
 
-I think this could give us a much cleaner operating model that is both more secure and better suited to the way our teams actually work today.
+Workload identities handle approved automated processing
 
-Happy to put together a short working session and walk through a proposed framework.
+Project groups control engagement-specific access
 
+Access packages provide repeatable onboarding and offboarding
+
+Sensitive activities remain isolated and time-bound
+
+Activity across the environment is auditable and attributable
+
+This would allow us to preserve the hard security boundaries while reducing the operational friction associated with switching identities, browser profiles, authentication contexts, and access methods throughout the day.
+
+Rather than trying to solve each authentication issue independently, I’d be happy to help map a representative engagement end to end and define what belongs in each zone, which activities are normal data access versus privileged administration, and where project-level provisioning or automation could simplify the process.
+
+I think there is an opportunity here to develop a much cleaner operating model that is both more secure and much better aligned to how our practitioners actually deliver client work today.
+
+In short, the goal would be to preserve the security boundary, but redesign the workflow around it.
+
+Happy to put together a short working session and walk through the framework at a high level.
+
+Best,
+Omer
