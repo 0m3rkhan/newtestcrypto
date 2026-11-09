@@ -1,0 +1,26 @@
+I’ve been thinking about the discussion around ADM access, database and storage connectivity, and the friction the current model is creating for the team.
+
+I don’t think the right answer is to weaken the security requirements or eliminate the separation between standard and privileged access. Instead, I think there is an opportunity to redesign the way we work around those controls so the security model remains intact while the delivery experience becomes much more efficient.
+
+At a high level, I’d suggest we separate our recurring activities into three categories:
+
+Normal day-to-day client and analytical work
+
+Privileged administrative activity
+
+Automated or system-driven activity
+
+From there, we can define which identity, permissions, and working environment should be used for each type of activity.
+
+The goal would be to keep routine work such as querying approved client datasets, accessing scoped storage, running analysis, and using approved development tools within a normal project workspace, while reserving ADM/PIM access for true administrative functions such as provisioning resources, changing permissions, modifying infrastructure, or managing security configuration.
+
+I also think there is an opportunity to introduce more project-specific access and potentially provisioned workspaces so teams are not constantly switching identities, browser profiles, and authentication contexts simply to perform routine engagement work.
+
+This would allow us to preserve the hard security boundaries while reducing the operational friction that is beginning to affect delivery.
+
+Rather than try to solve this one authentication issue at a time, I’d be happy to help map a representative engagement end to end and identify where we can separate normal data-plane activity from control-plane administration, where project-level access can be standardized, and where automation or dedicated workload identities could remove unnecessary manual steps.
+
+I think this could give us a much cleaner operating model that is both more secure and better suited to the way our teams actually work today.
+
+Happy to put together a short working session and walk through a proposed framework.
+
