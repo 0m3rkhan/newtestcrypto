@@ -1,7 +1,15 @@
-Thanks, Omer. I like the direction here, generally.
- 
-I want us to enable teams like DI&D to build and innovate quickly in support of client delivery without requiring IT to be in the middle of every development decision. At the same time, we need a consistent enterprise boundary around client data, identity/access, approved platforms and models, security, auditability, and anything that moves into repeatable or production use.
- 
-You also shouldn't lose sight of the lifecycle side of this. Development is only part of the cost. Anything you put into production eventually requires patching, maintenance, monitoring, support, and ownership when something breaks or needs to evolve. You also need to avoid creating key-person dependencies where one individual holds all of the development knowledge for a solution. Documentation, source control, knowledge sharing, and appropriate backup ownership need to be part of the model from the outset.
- 
-If we can establish that controlled environment and make the “paved road” easy to use, I think we can accomplish both objectives: distributed innovation and development, with centralized guardrails and governance.
+Thanks — I think we’re generally aligned on the objective.
+
+I also agree with your points around lifecycle ownership, documentation, source control, supportability and avoiding key-person dependencies. My first note was intentionally high level and focused mainly on the immediate access and workflow friction; I haven’t yet gotten into the broader delivery model I have in mind around CI/CD, standardized deployment patterns, monitoring, backup ownership, workload identities, AI controls and production support.
+
+My main concern is making sure the “paved road” is flexible enough that it does not recreate the same friction we are trying to solve.
+
+From my side, I already have some administrative capability today, so I’m not suggesting that control move away from IT. I’m more interested in defining which activities should sit within normal delivery, which truly require privileged access, and which controls can be embedded into the platform so they do not have to be reconsidered engagement by engagement.
+
+The principle I keep coming back to is:
+
+Centralize the guardrails, but make the paved road easy enough that teams can move quickly within them.
+
+I’d be happy to work through one or two real engagement patterns together and map the full lifecycle — access, development, data use, AI, deployment, monitoring and support — before we settle on the operating model.
+
+I think that would give us a better chance of designing something that is secure, supportable and scalable without limiting how practitioners actually deliver the work.
