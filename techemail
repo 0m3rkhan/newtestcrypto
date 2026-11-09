@@ -1,44 +1,7 @@
-At a high level, I’d suggest we move toward a zone-based operating model that separates:
-
-Innovation and lower-risk development activity
-
-Day-to-day client delivery and analytical work
-
-Privileged administrative and highly sensitive activity
-
-Each zone would have a defined identity, access model, tooling, and security posture. The objective would be to keep routine engagement work—such as querying approved client datasets, accessing scoped storage, running analysis, and using approved development tools—within a controlled project workspace using the practitioner’s normal identity, while reserving ADM/PIM access for true administrative functions such as provisioning resources, modifying infrastructure, changing security configuration, or assigning privileged access.
-
-I also think we can make the model more scalable by standardizing how each engagement is provisioned.
-
-Rather than treating access as a series of individual requests, an engagement could be established with a defined project access package that brings together the appropriate project group, approved data resources, analytical environment, repositories, and tooling for that matter. Membership could then be managed at the project level and expire when the engagement ends.
-
-Alongside the human identities, we should also consider workload identities for automated processes, pipelines, and eventually AI or digital-worker activity so system-to-system processing does not need to run under an individual practitioner’s credentials.
-
-The result would be a model where:
-
-Regular identities are used for normal client delivery
-
-Privileged identities are reserved for administration
-
-Workload identities handle approved automated processing
-
-Project groups control engagement-specific access
-
-Access packages provide repeatable onboarding and offboarding
-
-Sensitive activities remain isolated and time-bound
-
-Activity across the environment is auditable and attributable
-
-This would allow us to preserve the hard security boundaries while reducing the operational friction associated with switching identities, browser profiles, authentication contexts, and access methods throughout the day.
-
-Rather than trying to solve each authentication issue independently, I’d be happy to help map a representative engagement end to end and define what belongs in each zone, which activities are normal data access versus privileged administration, and where project-level provisioning or automation could simplify the process.
-
-I think there is an opportunity here to develop a much cleaner operating model that is both more secure and much better aligned to how our practitioners actually deliver client work today.
-
-In short, the goal would be to preserve the security boundary, but redesign the workflow around it.
-
-Happy to put together a short working session and walk through the framework at a high level.
-
-Best,
-Omer
+Thanks, Omer. I like the direction here, generally.
+ 
+I want us to enable teams like DI&D to build and innovate quickly in support of client delivery without requiring IT to be in the middle of every development decision. At the same time, we need a consistent enterprise boundary around client data, identity/access, approved platforms and models, security, auditability, and anything that moves into repeatable or production use.
+ 
+You also shouldn't lose sight of the lifecycle side of this. Development is only part of the cost. Anything you put into production eventually requires patching, maintenance, monitoring, support, and ownership when something breaks or needs to evolve. You also need to avoid creating key-person dependencies where one individual holds all of the development knowledge for a solution. Documentation, source control, knowledge sharing, and appropriate backup ownership need to be part of the model from the outset.
+ 
+If we can establish that controlled environment and make the “paved road” easy to use, I think we can accomplish both objectives: distributed innovation and development, with centralized guardrails and governance.
